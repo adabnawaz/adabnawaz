@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdabNawaz — Modern Urdu Poetry Sanctuary</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: {
+                            950: '#020611',
+                            900: '#040d21',
+                            800: '#0a1936',
+                            700: '#11254a',
+                        },
+                        copper: {
+                            light: '#e8c1ab',
+                            DEFAULT: '#c58361',
+                            dark: '#8f563b',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        mono: ['"Cinzel"', 'serif']
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 8s ease-in-out infinite 2s',
+                        'pulse-glow': 'pulseGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.2', transform: 'scale(1)' },
+                            '50%': { opacity: '0.4', transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Copper Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #020611; }
+        ::-webkit-scrollbar-thumb { background: #c58361; border-radius: 3px; }
+
+        /* Rich Animated Copper & Navy Gradients */
+        .copper-gradient-text {
+            background: linear-gradient(135deg, #e8c1ab 0%, #c58361 50%, #8f563b 100%);
+            background-size: 200% auto;
+            color: #000;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+
+        .vibrant-hero-text {
+            background: linear-gradient(135deg, #e8c1ab 0%, #c58361 40%, #e29578 80%, #a8b2d1 100%);
+            background-size: 300% auto;
+            color: #000;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 7s ease infinite;
+        }
+
+        @keyframes shine {
+            0% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+            100% { background-position: 0% center; }
+        }
+
+        /* Subtle Navy Noise/Paper Texture */
+        .bg-texture {
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.04"/%3E%3C/svg%3E');
+        }
+
+        /* Pristine Deep Blue Glass Cards */
+        .glass-card {
+            background: rgba(4, 13, 33, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(197, 131, 97, 0.15);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-8px);
+            background: rgba(10, 25, 54, 0.8);
+            border-color: rgba(197, 131, 97, 0.5);
+            box-shadow: 0 20px 40px -10px rgba(2, 6, 17, 0.8), 
+                        0 0 20px -5px rgba(197, 131, 97, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* Fading Copper Divider */
+        .fade-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197, 131, 97, 0.5), transparent);
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-midnight-950 bg-texture text-blue-100 font-sans antialiased selection:bg-copper selection:text-midnight-950 relative overflow-x-hidden">
+
+    <!-- SUBTLE AMBIENT BACKGROUND GLOWS (DEEP BLUES & WARM COPPER) -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] bg-copper/5 rounded-full blur-[160px] animate-pulse-glow"></div>
+        <div class="absolute top-[30%] right-[-10%] w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[170px] animate-float-slow"></div>
+        <div class="absolute bottom-[10%] left-[-10%] w-[700px] h-[700px] bg-indigo-900/10 rounded-full blur-[180px] animate-pulse-glow"></div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-midnight-950/80 backdrop-blur-xl border-b border-copper/20 shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between relative z-10">
+            
+            <!-- BRAND LOGO -->
+            <a href="#intro" class="flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-full border border-copper/40 bg-midnight-900 flex items-center justify-center shadow-[0_0_15px_rgba(197,131,97,0.2)] group-hover:shadow-[0_0_25px_rgba(197,131,97,0.5)] transition-all duration-300 overflow-hidden relative">
+                    <img src="Gemini_Generated_Image_843mua843mua843m.png" alt="AdabNawaz Icon" class="w-full h-full object-cover scale-110">
+                </div>
+                <div>
+                    <h1 class="font-serif text-2xl font-bold tracking-tight copper-gradient-text">AdabNawaz</h1>
+                    <p class="text-[10px] uppercase tracking-widest text-copper/70 font-mono">@adabnawaz.archive</p>
+                </div>
+            </a>
+
+            <!-- NAV LINKS ENCLOSED IN COPPER BOX (RIGHT TOP CORNER) -->
+            <nav class="flex items-center gap-1 p-1.5 rounded-2xl border border-copper/40 bg-midnight-900/80 shadow-[0_0_20px_rgba(197,131,97,0.1)] text-xs font-mono uppercase tracking-wider backdrop-blur-md">
+                <a href="#intro" class="px-3 sm:px-4 py-2 rounded-xl text-copper-light hover:text-midnight-950 hover:bg-copper transition-all duration-300">Introduction</a>
+                <a href="#founder" class="px-3 sm:px-4 py-2 rounded-xl text-copper-light hover:text-midnight-950 hover:bg-copper transition-all duration-300">Founder</a>
+                <a href="#shayars" class="px-3 sm:px-4 py-2 rounded-xl bg-copper text-midnight-950 font-bold shadow-inner hover:bg-copper-light transition-all duration-300">Shayar Catalog</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECTION 1: INTRODUCTION / HERO -->
+    <section id="intro" class="min-h-screen flex flex-col justify-center items-center text-center px-4 py-20 relative z-10">
+        <div class="max-w-5xl mx-auto space-y-10">
+            
+            <!-- Logo Reference with Soft Aura -->
+            <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto animate-float-slow group">
+                <div class="absolute inset-0 bg-gradient-to-tr from-copper/20 via-blue-900/20 to-copper/10 rounded-full blur-[60px] group-hover:blur-[90px] transition-all duration-700"></div>
+                <img src="Gemini_Generated_Image_843mua843mua843m.png" alt="AdabNawaz Master Logo" class="relative w-full h-full object-contain rounded-full shadow-[0_0_40px_rgba(2,6,17,0.8)] border-2 border-copper/30">
+            </div>
+
+            <!-- Soft Tag Badge -->
+            <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-copper/30 bg-midnight-900/80 text-copper-light text-xs font-mono tracking-[0.2em] uppercase shadow-[0_0_15px_rgba(197,131,97,0.1)]">
+                <span class="w-2 h-2 rounded-full bg-copper opacity-75 animate-pulse"></span>
+                Welcome to AdabNawaz <span class="text-copper-light/80 font-bold">(أدب نواز)</span>
+            </div>
+
+            <!-- Balanced Headline -->
+            <div class="space-y-4">
+                <h2 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold leading-tight drop-shadow-2xl">
+                    <span class="text-gray-100">Preserving the Soul of</span> <br>
+                    <span class="vibrant-hero-text italic font-serif">Urdu Literary Heritage</span>
+                </h2>
+            </div>
+
+            <!-- Glassmorphic Card Description -->
+            <p class="text-base sm:text-lg text-blue-100/80 font-light max-w-3xl mx-auto leading-relaxed backdrop-blur-md bg-midnight-900/60 border border-copper/20 p-6 sm:p-8 rounded-3xl shadow-[0_15px_35px_rgba(0,0,0,0.6)] relative overflow-hidden group">
+                <span class="absolute inset-0 bg-gradient-to-r from-copper/5 via-blue-500/5 to-indigo-500/5 opacity-30"></span>
+                <span class="relative z-10">
+                    A vibrant digital sanctuary dedicated to preserving classical & modern Urdu ghazals in clean Roman Urdu. Designed for lovers of literature who seek authenticity, elegance, and soul-stirring poetry.
+                </span>
+            </p>
+
+            <!-- Social Links -->
+            <div class="flex items-center justify-center gap-5 pt-2">
+                <a href="#" class="w-11 h-11 rounded-full flex items-center justify-center bg-midnight-900 border border-copper/30 text-copper-light/80 hover:text-midnight-950 hover:border-copper hover:bg-copper hover:scale-105 transition-all duration-300 shadow-[0_0_12px_rgba(197,131,97,0.1)]">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <a href="#" class="w-11 h-11 rounded-full flex items-center justify-center bg-midnight-900 border border-copper/30 text-copper-light/80 hover:text-midnight-950 hover:border-copper hover:bg-copper hover:scale-105 transition-all duration-300 shadow-[0_0_12px_rgba(197,131,97,0.1)]">
+                    <i class="fa-brands fa-x-twitter text-lg"></i>
+                </a>
+                <a href="#" class="w-11 h-11 rounded-full flex items-center justify-center bg-midnight-900 border border-copper/30 text-copper-light/80 hover:text-midnight-950 hover:border-copper hover:bg-copper hover:scale-105 transition-all duration-300 shadow-[0_0_12px_rgba(197,131,97,0.1)]">
+                    <i class="fa-brands fa-youtube text-lg"></i>
+                </a>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="pt-4 animate-bounce text-copper/40 text-base">
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: FOUNDER -->
+    <section id="founder" class="py-20 relative z-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="bg-midnight-900/60 backdrop-blur-xl border border-copper/20 rounded-3xl p-8 sm:p-12 shadow-[0_0_30px_rgba(0,0,0,0.5)] relative overflow-hidden group hover:border-copper/50 transition-colors duration-500">
+                
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-copper/5 rounded-full blur-[80px] group-hover:bg-copper/15 transition-colors duration-700"></div>
+
+                <div class="flex flex-col md:flex-row items-center gap-10 relative z-10">
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-2 border-copper/40 bg-gradient-to-br from-midnight-800 to-midnight-950 flex-shrink-0 flex items-center justify-center text-white text-5xl shadow-[inset_0_0_20px_rgba(0,0,0,0.8),0_0_20px_rgba(197,131,97,0.15)] animate-float-delayed">
+                        <i class="fa-solid fa-user-nib drop-shadow-[0_0_12px_rgba(255,255,255,0.2)] text-copper-light"></i>
+                    </div>
+
+                    <div class="space-y-4 text-center md:text-left">
+                        <span class="inline-block px-3 py-1 rounded-full bg-copper/10 text-[10px] font-mono text-copper uppercase tracking-[0.3em] border border-copper/20">Founder & Visionary</span>
+                        <h3 class="font-serif text-3xl sm:text-4xl font-bold text-gray-100 tracking-wide">Syed Ahsan Al-Husseini</h3>
+                        
+                        <p class="text-base text-blue-100/70 font-light leading-relaxed pt-2 italic border-l-2 border-copper/40 pl-4">
+                            "Urdu poetry is not merely words on paper; it is the rhythmic expression of deep human emotions, longing, and timeless wisdom. AdabNawaz was created to bridge generations—making master poetries accessible in clear Roman Urdu without sacrificing aesthetic elegance or reverence."
+                        </p>
+
+                        <div class="flex flex-wrap justify-center md:justify-start gap-3 pt-2">
+                            <a href="#" class="px-5 py-2 rounded-full border border-copper/30 bg-midnight-950/80 text-copper-light text-xs font-mono uppercase tracking-wider hover:bg-copper hover:text-midnight-950 transition-all duration-300">
+                                <i class="fa-brands fa-linkedin-in mr-2"></i> LinkedIn
+                            </a>
+                            <a href="#" class="px-5 py-2 rounded-full border border-copper/30 bg-midnight-950/80 text-copper-light text-xs font-mono uppercase tracking-wider hover:bg-copper hover:text-midnight-950 transition-all duration-300">
+                                <i class="fa-solid fa-globe mr-2"></i> Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SHAYARS GRID -->
+    <section id="shayars" class="min-h-screen flex flex-col justify-center items-center px-4 py-24 w-full max-w-6xl mx-auto relative z-10">
+        
+        <!-- Ornamental Divider -->
+        <div class="relative w-full max-w-md mx-auto mb-16">
+            <div class="fade-divider"></div>
+            <div class="absolute left-1/2 -translate-x-1/2 -top-1 w-2 h-2 rounded-full bg-copper shadow-[0_0_10px_rgba(197,131,97,0.8)]"></div>
+        </div>
+        
+        <!-- Framed Copper Box Heading -->
+        <div class="text-center mb-16">
+            <div class="inline-block border-2 border-copper/50 bg-midnight-900/80 px-8 py-5 rounded-2xl shadow-[0_0_25px_rgba(197,131,97,0.1)] relative backdrop-blur-md">
+                <span class="text-xs font-mono text-copper uppercase tracking-[0.3em] block mb-1">The Catalog</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold copper-gradient-text tracking-wide">Shayar Catalog</h2>
+            </div>
+            <p class="text-xs font-mono text-blue-200/50 uppercase tracking-widest mt-4">Voices of Eternity</p>
+        </div>
+
+        <!-- Grid: 3 in a row, Deep Blue Glass Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-16">
+            
+            <a href="ghalib.html" class="glass-card rounded-3xl p-10 text-center group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-copper/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <i class="fa-solid fa-feather text-copper/60 text-2xl mb-5 group-hover:text-copper-light transition-colors duration-500 group-hover:drop-shadow-[0_0_15px_rgba(232,193,171,0.5)]"></i>
+                    <h3 class="font-serif text-3xl text-gray-100 mb-2 group-hover:text-white transition-colors duration-500">Mirza Ghalib</h3>
+                    <p class="text-xs font-mono text-copper tracking-widest">1797 — 1869</p>
+                </div>
+            </a>
+
+            <a href="jaun.html" class="glass-card rounded-3xl p-10 text-center group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-copper/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <i class="fa-solid fa-heart-crack text-copper/60 text-2xl mb-5 group-hover:text-copper-light transition-colors duration-500 group-hover:drop-shadow-[0_0_15px_rgba(232,193,171,0.5)]"></i>
+                    <h3 class="font-serif text-3xl text-gray-100 mb-2 group-hover:text-white transition-colors duration-500">Jaun Elia</h3>
+                    <p class="text-xs font-mono text-copper tracking-widest">1931 — 2002</p>
+                </div>
+            </a>
+
+            <a href="faiz.html" class="glass-card rounded-3xl p-10 text-center group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-copper/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <i class="fa-solid fa-fire text-copper/60 text-2xl mb-5 group-hover:text-copper-light transition-colors duration-500 group-hover:drop-shadow-[0_0_15px_rgba(232,193,171,0.5)]"></i>
+                    <h3 class="font-serif text-3xl text-gray-100 mb-2 group-hover:text-white transition-colors duration-500">Faiz Ahmed Faiz</h3>
+                    <p class="text-xs font-mono text-copper tracking-widest">1911 — 1984</p>
+                </div>
+            </a>
+
+            <a href="iqbal.html" class="glass-card rounded-3xl p-10 text-center group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-copper/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <i class="fa-solid fa-book-open text-copper/60 text-2xl mb-5 group-hover:text-copper-light transition-colors duration-500 group-hover:drop-shadow-[0_0_15px_rgba(232,193,171,0.5)]"></i>
+                    <h3 class="font-serif text-3xl text-gray-100 mb-2 group-hover:text-white transition-colors duration-500">Allama Iqbal</h3>
+                    <p class="text-xs font-mono text-copper tracking-widest">1877 — 1938</p>
+                </div>
+            </a>
+
+            <a href="faraz.html" class="glass-card rounded-3xl p-10 text-center group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-copper/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <i class="fa-solid fa-cloud-moon text-copper/60 text-2xl mb-5 group-hover:text-copper-light transition-colors duration-500 group-hover:drop-shadow-[0_0_15px_rgba(232,193,171,0.5)]"></i>
+                    <h3 class="font-serif text-3xl text-gray-100 mb-2 group-hover:text-white transition-colors duration-500">Ahmad Faraz</h3>
+                    <p class="text-xs font-mono text-copper tracking-widest">1931 — 2008</p>
+                </div>
+            </a>
+
+            <a href="mir.html" class="glass-card rounded-3xl p-10 text-center group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-copper/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <i class="fa-solid fa-crown text-copper/60 text-2xl mb-5 group-hover:text-copper-light transition-colors duration-500 group-hover:drop-shadow-[0_0_15px_rgba(232,193,171,0.5)]"></i>
+                    <h3 class="font-serif text-3xl text-gray-100 mb-2 group-hover:text-white transition-colors duration-500">Mir Taqi Mir</h3>
+                    <p class="text-xs font-mono text-copper tracking-widest">1723 — 1810</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Ghost Button -->
+        <button class="group relative px-10 py-4 overflow-hidden rounded-full border border-copper/50 text-copper-light font-mono text-xs uppercase tracking-[0.2em] transition-all duration-300 hover:border-copper hover:text-midnight-950 hover:shadow-[0_0_25px_rgba(197,131,97,0.3)]">
+            <div class="absolute inset-0 bg-copper translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+            <span class="relative z-10 flex items-center gap-3">
+                Load More Shayars <i class="fa-solid fa-arrow-down text-[10px] group-hover:translate-y-1 transition-transform"></i>
+            </span>
+        </button>
+    </section>
+
+    <!-- SECTION 4: COLLECTIONS -->
+    <section class="min-h-[80vh] flex flex-col justify-center items-center text-center px-4 py-20 relative z-10">
+        
+        <!-- Ornamental Divider -->
+        <div class="relative w-full max-w-md mx-auto mb-16">
+            <div class="fade-divider"></div>
+            <div class="absolute left-1/2 -translate-x-1/2 -top-1 w-2 h-2 rounded-full bg-copper shadow-[0_0_10px_rgba(197,131,97,0.8)]"></div>
+        </div>
+        
+        <span class="text-xs font-mono text-copper-light uppercase tracking-[0.3em] mb-4">Anthologies</span>
+        <h2 class="font-serif text-5xl font-medium text-gray-100 mb-6 drop-shadow-md">Curated Collections</h2>
+        <p class="text-lg text-blue-200/70 font-light max-w-xl mx-auto italic">
+            Thematic verses organized by the intricate emotions of the human soul.
+        </p>
+        
+        <!-- Placeholders -->
+        <div class="mt-16 flex flex-wrap justify-center gap-8">
+            
+            <div class="w-40 h-40 rounded-3xl border border-copper/30 bg-midnight-900/50 backdrop-blur-md flex flex-col items-center justify-center text-copper gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-3 hover:border-copper hover:bg-midnight-800/80 hover:shadow-[0_10px_35px_rgba(197,131,97,0.2)] group cursor-pointer">
+                <div class="p-4 rounded-full bg-copper/10 group-hover:bg-copper/20 transition-colors duration-500 border border-transparent group-hover:border-copper/30">
+                    <i class="fa-regular fa-heart text-2xl text-copper-light group-hover:drop-shadow-[0_0_12px_rgba(232,193,171,0.6)] group-hover:text-white transition-all duration-300"></i>
+                </div>
+                <span class="text-sm font-mono tracking-widest text-white group-hover:text-copper-light transition-colors">Ishq</span>
+            </div>
+
+            <div class="w-40 h-40 rounded-3xl border border-copper/30 bg-midnight-900/50 backdrop-blur-md flex flex-col items-center justify-center text-copper gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-3 hover:border-copper hover:bg-midnight-800/80 hover:shadow-[0_10px_35px_rgba(197,131,97,0.2)] group cursor-pointer">
+                <div class="p-4 rounded-full bg-copper/10 group-hover:bg-copper/20 transition-colors duration-500 border border-transparent group-hover:border-copper/30">
+                    <i class="fa-solid fa-brain text-2xl text-copper-light group-hover:drop-shadow-[0_0_12px_rgba(232,193,171,0.6)] group-hover:text-white transition-all duration-300"></i>
+                </div>
+                <span class="text-sm font-mono tracking-widest text-white group-hover:text-copper-light transition-colors">Falsafa</span>
+            </div>
+
+            <div class="w-40 h-40 rounded-3xl border border-copper/30 bg-midnight-900/50 backdrop-blur-md flex flex-col items-center justify-center text-copper gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-3 hover:border-copper hover:bg-midnight-800/80 hover:shadow-[0_10px_35px_rgba(197,131,97,0.2)] group cursor-pointer">
+                <div class="p-4 rounded-full bg-copper/10 group-hover:bg-copper/20 transition-colors duration-500 border border-transparent group-hover:border-copper/30">
+                    <i class="fa-solid fa-droplet text-2xl text-copper-light group-hover:drop-shadow-[0_0_12px_rgba(232,193,171,0.6)] group-hover:text-white transition-all duration-300"></i>
+                </div>
+                <span class="text-sm font-mono tracking-widest text-white group-hover:text-copper-light transition-colors">Dard</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-midnight-950 border-t border-copper/20 py-10 text-center text-xs text-blue-200/50 font-mono space-y-4 relative z-10 mt-10">
+        <div class="w-8 h-8 mx-auto flex items-center justify-center border border-copper/30 rounded-full mb-2 bg-copper/5">
+            <i class="fa-solid fa-feather-pointed text-copper"></i>
+        </div>
+        <p class="text-copper-light tracking-widest">ADABNAWAZ <span class="font-sans text-blue-900 px-2">|</span> (أدب نواز)</p>
+        <p class="opacity-80">Minimalist Roman Urdu Repository</p>
+        <p class="pt-4 opacity-40">© 2026 AdabNawaz. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
