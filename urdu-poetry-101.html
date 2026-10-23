@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Tailwind CSS CDN & Configuration -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    midnight: {
+                        950: '#020611',
+                        900: '#040d21',
+                        800: '#0a1936',
+                        700: '#11254a',
+                    },
+                    copper: {
+                        light: '#e8c1ab',
+                        DEFAULT: '#c58361',
+                        dark: '#8f563b',
+                    }
+                },
+                fontFamily: {
+                    serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                    sans: ['"Inter"', 'sans-serif'],
+                    mono: ['"Cinzel"', 'serif']
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    /* Gradient text helper */
+    .copper-gradient-text {
+        background: linear-gradient(135deg, #e8c1ab 0%, #c58361 50%, #8f563b 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urdu Poetry 101: The Basics (اصولِ سخن)</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400&family=Noto+Nastaliq+Urdu:wght@400;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+	/* Navigation & Brand Alignment */
+	.top-nav {
+    		position: fixed;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		display: flex;
+    		align-items: center;
+    		padding: 10px 25px;
+    		background: rgba(15, 15, 20, 0.7);
+    		backdrop-filter: blur(10px);
+    		z-index: 9998;
+    		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+	.brand-link {
+    		display: flex;
+    		align-items: center;
+    		gap: 12px; /* Space between logo and text */
+    		text-decoration: none;
+		}
+
+	.top-nav img.logo {
+    		max-height: 40px;
+    		width: auto;
+    		object-fit: contain;
+		}
+
+	.brand-name {
+    		color: #F9E5C9;
+    		font-family: 'Cinzel', serif;
+    		font-size: 1.4rem;
+    		font-weight: 600;
+    		letter-spacing: 1.5px;
+    		transition: color 0.2s ease;
+		}
+
+	.brand-link:hover .brand-name {
+    		color: #c58361; /* Subtle highlight color on hover */
+		}
+        /* Top Navigation Bar with Logo */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 25px;
+            background: rgba(15, 15, 20, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 9998;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .top-nav .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .top-nav img.logo {
+            max-height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Reduced Urdu Font Size in Examples */
+        .poetry-couplet .urdu-verse,
+        .poetry-couplet .urdu-text,
+        .glass-card .urdu-verse {
+            font-size: 1.5rem !important; /* Scaled down from larger sizes for better visual balance */
+            line-height: 2.2rem !important;
+        }
+
+        /* Index & Segment Overview Styling */
+        .toc-container {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(249, 229, 201, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 10px 20px;
+            margin-top: 1rem;
+        }
+
+        .toc-list li a {
+            color: #F9E5C9;
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        .toc-list li a:hover {
+            color: #c58361;
+            transform: translateX(4px);
+        }
+/* GLOBAL HEADING FIX FOR TAILWIND PREFLIGHT RESET */
+main h2 {
+    font-family: 'Cinzel', serif !important;
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    color: #F9E5C9 !important;
+    margin-bottom: 1.2rem !important;
+}
+
+main h3 {
+    font-family: 'Cinzel', serif !important;
+    font-size: 1.6rem !important;
+    font-weight: 600 !important;
+    color: #c58361 !important;
+    margin-bottom: 0.8rem !important;
+}
+
+main h4 {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    color: #c58361 !important;
+}
+    </style>
+</head>
+<body>
+    
+<!-- TOP NAVIGATION BAR -->
+<header class="sticky top-0 z-40 bg-midnight-950/80 backdrop-blur-xl border-b border-copper/20 shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between relative z-10">
+        
+        <!-- BRAND LOGO & NAME -->
+        <a href="index.html#intro" class="flex items-center gap-4 group text-left no-underline">
+            <div class="w-12 h-12 rounded-full border border-copper/40 bg-midnight-900 flex items-center justify-center shadow-[0_0_15px_rgba(197,131,97,0.2)] group-hover:shadow-[0_0_25px_rgba(197,131,97,0.5)] transition-all duration-300 overflow-hidden relative">
+                <img src="logo.png" alt="AdabNawaz Icon" class="w-full h-full object-cover scale-110" onerror="this.style.display='none';">
+            </div>
+            <div>
+                <!-- Inline font-size added here to ensure Tailwind reset doesn't shrink the nav title -->
+                <h1 class="font-serif text-2xl font-bold tracking-tight copper-gradient-text m-0 p-0 leading-tight" style="font-size: 1.5rem;">AdabNawaz</h1>
+                <p class="text-[10px] uppercase tracking-widest text-copper/70 font-mono m-0 p-0">@adabnawaz.archive</p>
+            </div>
+        </a>
+
+        <!-- NAV LINKS ENCLOSED IN COPPER BOX -->
+        <nav class="flex items-center gap-1 p-1.5 rounded-2xl border border-copper/40 bg-midnight-900/80 shadow-[0_0_20px_rgba(197,131,97,0.1)] text-xs font-mono uppercase tracking-wider backdrop-blur-md hidden sm:flex">
+            <a href="index.html#intro" class="px-3 sm:px-4 py-2 rounded-xl text-copper-light hover:text-midnight-950 hover:bg-copper transition-all duration-300 no-underline">Home</a>
+            <a href="#segment-overview" class="px-3 sm:px-4 py-2 rounded-xl text-copper-light hover:text-midnight-950 hover:bg-copper transition-all duration-300 no-underline">Overview</a>
+            <a href="#section-2" class="px-3 sm:px-4 py-2 rounded-xl text-copper-light hover:text-midnight-950 hover:bg-copper transition-all duration-300 no-underline">Couplet</a>
+            <a href="#section-6" class="px-3 sm:px-4 py-2 rounded-xl bg-copper text-midnight-950 font-bold shadow-inner hover:bg-copper-light transition-all duration-300 no-underline">Meters</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Reading Progress Bar -->
+<div id="progress-bar" style="position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #F9E5C9, #c58361); width: 0%; z-index: 9999; transition: width 0.1s ease-out;"></div>
+
+<!-- HERO HEADER (Single, corrected heading block) -->
+<header class="glass-section" style="margin-top: 4rem; text-align: center;">
+    
+    <!-- Explicitly styled English H1 to be large and bold -->
+    <h1 style="font-size: 3.5rem; font-weight: bold; font-family: 'Cinzel', serif; color: #F9E5C9; line-height: 1.2; margin: 0;">
+        Urdu Poetry 101: The Basics 
+        <br>
+        <!-- Scaled down Urdu text -->
+        <span class="urdu-text" style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.8rem; display: block; margin-top: 0.5rem; font-weight: normal; color: #c58361;">
+            اصولِ سخن
+        </span>
+    </h1>
+    
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #F9E5C9; max-width: 800px; margin: 1.5rem auto 0 auto;">
+        Step into the mehfil. A beginner’s guide to understanding the structure, rhythm, and soul of Urdu poetry.
+    </p>
+    
+</header>
+    <main>
+        <!-- SEGMENT OVERVIEW & TABLE OF CONTENTS -->
+        <section id="segment-overview" class="glass-section">
+            <h2>Overview & Index</h2>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: #E5E7EB;">
+                Welcome to this masterclass segment! In this guide, we will explore the foundational anatomy of Urdu verse—moving step-by-step from the smallest couplet unit to the complex mathematical meters and rich historical traditions that define the craft.
+            </p>
+
+            <div class="toc-container">
+                <h3 style="color: #c58361; font-size: 1.2rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Index of Contents</h3>
+                <ul class="toc-list">
+                    <li><a href="#section-1"><i class="fa-solid fa-angle-right" style="margin-right: 8px;"></i> 1. Introduction</a></li>
+                    <li><a href="#section-2"><i class="fa-solid fa-angle-right" style="margin-right: 8px;"></i> 2. The Anatomy of a Couplet (شعر کی ساخت)</a></li>
+                    <li><a href="#section-3"><i class="fa-solid fa-angle-right" style="margin-right: 8px;"></i> 3. Rhythm and Rhyme (قافیہ، ردیف اور بحر)</a></li>
+                    <li><a href="#section-4"><i class="fa-solid fa-angle-right" style="margin-right: 8px;"></i> 4. Understanding Beher (بحر)</a></li>
+                    <li><a href="#section-5"><i class="fa-solid fa-angle-right" style="margin-right: 8px;"></i> 5. Taqtee: Scansion Process (تقطیع)</a></li>
+                    <li><a href="#section-6"><i class="fa-solid fa-angle-right" style="margin-right: 8px;"></i> 6. The 7 Major Classical Meters</a></li>
+                    <li><a href="#section-7"><i class="fa-solid fa-angle-right" style="margin-right: 8px;"></i> 7. Poetic Aesthetics & Rhetorical Devices</a></li>
+                    <li><a href="#section-8"><i class="fa-solid fa-angle-right" style="margin-right: 8px;"></i> 8. Major Poetic Genres (اصنافِ سخن)</a></li>
+                    <li><a href="#section-9"><i class="fa-solid fa-angle-right" style="margin-right: 8px;"></i> 9. Rival Schools: Delhi vs. Lucknow</a></li>
+                    <li><a href="#concluding-summary"><i class="fa-solid fa-angle-right" style="margin-right: 8px;"></i> Masterclass Summary (خلاصہ)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 1: Introduction -->
+        <section id="section-1" class="glass-section">
+            <h2>1. Introduction</h2>
+            <p>Imagine an art form where two simple lines can hold the weight of an entire novel. Urdu poetry is exactly that—a magical blend of strict mathematical precision and boundless human emotion.</p>
+            <p>Before you can truly lose yourself in its beauty, it helps to know how the magic trick is done. This masterclass will guide you through the structural rules, the rhythm, and the classic forms that have enchanted listeners for centuries.</p>
+        </section>
+
+        <!-- SECTION 2: Anatomy of a Couplet -->
+        <section id="section-2" class="glass-section">
+            <h2>2. The Anatomy of a Couplet (شعر کی ساخت)</h2>
+            <p>To understand Urdu poetry, you must first understand its most fundamental heartbeat: the <strong>Sher</strong>. Think of a Sher as a miniature universe; it requires no context and stands entirely on its own.</p>
+            
+            <div class="comparison-grid">
+                <div class="glass-card">
+                    <h3>Misra (مصرع)</h3>
+                    <p>A single line of a poem.</p>
+                    <ul>
+                        <li><strong>Misra-e-Ula (مصرع اولیٰ):</strong> The first line. This is the setup; it creates curiosity or establishes a premise.</li>
+                        <li><strong>Misra-e-Sani (مصرع ثانی):</strong> The second line. This is the emotional "punchline" that delivers the deeper meaning and leaves the audience saying "Wah!"</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card theme-romantic">
+                    <h3>Sher (شعر)</h3>
+                    <p>A complete couplet. Two lines (Misra-e-Ula and Misra-e-Sani) that together express a self-contained, powerful thought.</p>
+                </div>
+                
+                <div class="glass-card theme-spiritual">
+                    <h3>Matla (مطلع)</h3>
+                    <p>The opening couplet of a Ghazal. In the Matla, both lines must end with the exact same rhyme and refrain. It proudly announces the rhyme scheme for the rest of the poem.</p>
+                </div>
+
+                <div class="glass-card">
+                    <h3>Maqta (مقطع)</h3>
+                    <p>The grand finale; the final couplet of the Ghazal. It traditionally contains the poet's <strong>Takhallus (تخلص)</strong>, or pen name, playfully or philosophically woven into the verse.</p>
+                </div>
+            </div>
+
+            <!-- Poetry Example 1: The Sher -->
+            <div class="poetry-couplet">
+                <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase;">The Masterclass: Mirza Ghalib</h4>
+                <div class="urdu-verse urdu-text">
+                    <span>ہزاروں خواہشیں ایسی کہ ہر خواہش پہ دم نکلے</span>
+                    <span>بہت نکلے مرے ارمان لیکن پھر بھی کم نکلے</span>
+                </div>
+                <hr class="poetry-divider">
+                <div class="english-translation">
+                    <p><strong>(Misra-e-Ula):</strong> Hazaaron khwahishein aisi ke har khwahish pe dum nikle</p>
+                    <p><strong>(Misra-e-Sani):</strong> Bahut niklay mere armaan, lekin phir bhi kam nikle</p>
+                    <br>
+                    <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 1rem;">
+                        <strong>Meaning:</strong><br>
+                        (Setup) A thousand desires, each so intense it is worth dying for...<br>
+                        (Punchline) I achieved so many of my dreams, yet they still felt too few.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Poetry Example 2: The Maqta & Takhallus -->
+            <div class="poetry-couplet">
+                <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase;">Example of a Maqta & Takhallus: Mirza Ghalib</h4>
+                <div class="urdu-verse urdu-text">
+                    <span>کعبہ کس منہ سے جاؤ گے غالبؔ</span>
+                    <span>شرم تم کو مگر نہیں آتی</span>
+                </div>
+                <hr class="poetry-divider">
+                <div class="english-translation">
+                    <p>Kaaba kis munh se jaoge <strong>'Ghalib'</strong> (Takhallus)</p>
+                    <p>Sharm tumko magar nahi aati</p>
+                    <br>
+                    <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 1rem;">
+                        <strong>Meaning:</strong> With what face will you go to the holy Kaaba, Ghalib? You should be ashamed, but alas, you have no shame! (Here, Ghalib humorously calls out his own sinful nature).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: The Rhyme Structure -->
+        <section id="section-3" class="glass-section">
+            <h2>3. Rhythm and Rhyme (قافیہ، ردیف اور بحر)</h2>
+            <p>The intoxicating musicality of Urdu poetry isn't accidental. It relies on a strict trio of phonetic rules that keep the poem marching to a hypnotic beat.</p>
+            
+            <div class="comparison-grid">
+                <div class="glass-card theme-mathematical">
+                    <h3>Beher (بحر)</h3>
+                    <p>The meter or rhythmic heartbeat. Every single line in a poem must strictly follow the exact same syllable structure and weight.</p>
+                </div>
+
+                <div class="glass-card">
+                    <h3>Qafiya (قافیہ)</h3>
+                    <p>The rhyming words. These words change throughout the poem but must always rhyme perfectly with each other.</p>
+                </div>
+
+                <div class="glass-card">
+                    <h3>Radif (ردیف)</h3>
+                    <p>The refrain. A specific word or phrase that is repeated exactly at the very end of the lines, immediately following the Qafiya.</p>
+                </div>
+            </div>
+
+            <!-- Poetry Example 3: Rhyme Structure -->
+            <div class="poetry-couplet">
+                <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase;">The Masterclass: Mir Taqi Mir</h4>
+                <div class="urdu-verse urdu-text">
+                    <span>ہستی اپنی حباب کی سی ہے</span>
+                    <span>یہ نمائش سراب کی سی ہے</span>
+                </div>
+                <hr class="poetry-divider">
+                <div class="english-translation">
+                    <p>Hasti apni <strong>hubab</strong> <span class="badge-short" style="font-size: 0.8rem; background: rgba(197, 131, 97, 0.2); padding: 2px 8px; border-radius: 12px; font-family: sans-serif;">(Qafiya)</span> <strong>ki si hai</strong> <span class="badge-long" style="font-size: 0.8rem; background: rgba(139, 202, 214, 0.2); padding: 2px 8px; border-radius: 12px; font-family: sans-serif;">(Radif)</span></p>
+                    <p>Yeh numaaish <strong>saraab</strong> <span class="badge-short" style="font-size: 0.8rem; background: rgba(197, 131, 97, 0.2); padding: 2px 8px; border-radius: 12px; font-family: sans-serif;">(Qafiya)</span> <strong>ki si hai</strong> <span class="badge-long" style="font-size: 0.8rem; background: rgba(139, 202, 214, 0.2); padding: 2px 8px; border-radius: 12px; font-family: sans-serif;">(Radif)</span></p>
+                    <br>
+                    <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 1rem;">
+                        <strong>Meaning:</strong> This mortal existence is just like a bubble (hubab); this grand illusion is nothing but a mirage (saraab).<br><br>
+                        <em>Notice how perfectly <strong>hubab</strong> and <strong>saraab</strong> rhyme, anchored by the repeating refrain <strong>ki si hai</strong>.</em>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Beher (Poetic Meter) -->
+        <section id="section-4" class="glass-section">
+            <h2>4. Understanding Beher: The Mathematics of Rhythm (بحر)</h2>
+            <p>While it reads like flowing emotion, Urdu poetry is mathematically precise. The <strong>Beher (meter)</strong> is the rigid rhythmic framework that every single line in a poem must obey. It provides the intoxicating musicality and cadence that separates poetry from prose.</p>
+            
+            <div class="comparison-grid">
+                <div class="glass-card theme-mathematical">
+                    <h3>Ilm-e-Arooz (علمِ عروض)</h3>
+                    <p>The classical science of meter, Ilm-e-Arooz, defines 19 primary meters across Arabic, Persian, and Urdu. However, in practical, mainstream Urdu poetry, only 7 meters are widely used. Over 95% of classic Urdu Ghazals and Nazms are composed in one of these seven root frameworks.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Weight over Stress</h3>
+                    <p>Unlike English poetry, which relies on stressed and unstressed syllables (such as iambic pentameter), Urdu poetry is quantitative. Its rhythm is based strictly on <strong>syllable weight</strong>—how long a sound is held when spoken aloud, creating a continuous phonetic flow.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Taqtee (The Mathematics of Poetry) -->
+        <section id="section-5" class="glass-section">
+            <h2>5. Taqtee: The Process of Scansion (تقطیع)</h2>
+            <p>To understand how these meters work, we scan the lines—a process called <strong>Taqtee (تقطیع)</strong>. We do this by breaking words down into short and long syllables. Written spaces between words are ignored; the focus is purely on continuous spoken sound.</p>
+            
+            <div class="glass-card theme-mathematical" style="margin: 3rem auto;">
+                <h3>The Syllable Weight System (وزن)</h3>
+                <p>Words are measured using binary numeric values based on their phonetic pronunciation:</p>
+                <ul style="list-style: none; padding-top: 1rem;">
+                    <li style="margin-bottom: 1.5rem;">
+                        <span class="badge-short syllable-badge syllable-short">Short Syllable [1]</span> 
+                        <strong>Harf-e-Mufrad:</strong> A quick sound, usually a single movable consonant or a short vowel (e.g., Ki, Tu, Na, Gu).
+                    </li>
+                    <li>
+                        <span class="badge-long syllable-badge syllable-long">Long Syllable [2]</span> 
+                        <strong>Harf-e-Muzai'f:</strong> A stretched sound, usually a consonant with a long vowel, or a closed syllable ending in a consonant (e.g., Dil, Raat, Mein, Zaa).
+                    </li>
+                </ul>
+            </div>
+
+            <h3>The 8 Foundational Arkaan (ارکان)</h3>
+            <p>Just as musicians use "1-and-2-and-3-and-4" to count beats, Urdu poets use traditional Arabic dummy words called <strong>Arkaan</strong> to measure rhythm. These words have no inherent meaning; their only job is to provide a rigid mathematical template for the syllables.</p>
+
+            <div class="comparison-grid">
+                <div class="glass-card">
+                    <h4 class="urdu-text" style="font-size: 1.5rem;">فعولن</h4>
+                    <p><strong>Fa'oolun</strong></p>
+                    <p>Weight: <span class="badge-short syllable-badge syllable-short">1</span> - <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-long syllable-badge syllable-long">2</span></p>
+                    <p style="color: var(--gold-champagne); font-size: 0.95rem; margin-top: 1rem;"><em>Examples: Gu-zaa-rish, Ba-haa-ron</em></p>
+                </div>
+                
+                <div class="glass-card">
+                    <h4 class="urdu-text" style="font-size: 1.5rem;">فاعلن</h4>
+                    <p><strong>Faa'ilun</strong></p>
+                    <p>Weight: <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-short syllable-badge syllable-short">1</span> - <span class="badge-long syllable-badge syllable-long">2</span></p>
+                    <p style="color: var(--gold-champagne); font-size: 0.95rem; margin-top: 1rem;"><em>Examples: Qaa-ti-lon, Saa-hi-lon</em></p>
+                </div>
+
+                <div class="glass-card">
+                    <h4 class="urdu-text" style="font-size: 1.5rem;">مفاعیلن</h4>
+                    <p><strong>Mafaa'eelun</strong></p>
+                    <p>Weight: <span class="badge-short syllable-badge syllable-short">1</span> - <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-long syllable-badge syllable-long">2</span></p>
+                    <p style="color: var(--gold-champagne); font-size: 0.95rem; margin-top: 1rem;"><em>Examples: Mu-sal-maa-non, Pa-re-shaa-ni</em></p>
+                </div>
+
+                <div class="glass-card">
+                    <h4 class="urdu-text" style="font-size: 1.5rem;">فاعلاتن</h4>
+                    <p><strong>Faa'ilaatun</strong></p>
+                    <p>Weight: <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-short syllable-badge syllable-short">1</span> - <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-long syllable-badge syllable-long">2</span></p>
+                    <p style="color: var(--gold-champagne); font-size: 0.95rem; margin-top: 1rem;"><em>Examples: Kaa-mi-yaa-bi, Aa-shi-qaa-na</em></p>
+                </div>
+
+                <div class="glass-card">
+                    <h4 class="urdu-text" style="font-size: 1.5rem;">مستفعلن</h4>
+                    <p><strong>Mustaf'ilun</strong></p>
+                    <p>Weight: <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-short syllable-badge syllable-short">1</span> - <span class="badge-long syllable-badge syllable-long">2</span></p>
+                    <p style="color: var(--gold-champagne); font-size: 0.95rem; margin-top: 1rem;"><em>Examples: An-jaam-e-kaar, Dar-yaa-di-li</em></p>
+                </div>
+
+                <div class="glass-card">
+                    <h4 class="urdu-text" style="font-size: 1.5rem;">مفاعلتن</h4>
+                    <p><strong>Mufaa'alatun</strong></p>
+                    <p>Weight: <span class="badge-short syllable-badge syllable-short">1</span> - <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-short syllable-badge syllable-short">1</span> - <span class="badge-short syllable-badge syllable-short">1</span> - <span class="badge-long syllable-badge syllable-long">2</span></p>
+                    <p style="color: var(--gold-champagne); font-size: 0.95rem; margin-top: 1rem;"><em>Examples: Mu-qaa-ba-la-ti, Mu-khaa-li-fa-ton</em></p>
+                </div>
+
+                <div class="glass-card">
+                    <h4 class="urdu-text" style="font-size: 1.5rem;">متفاعلن</h4>
+                    <p><strong>Mutafaa'ilun</strong></p>
+                    <p>Weight: <span class="badge-short syllable-badge syllable-short">1</span> - <span class="badge-short syllable-badge syllable-short">1</span> - <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-short syllable-badge syllable-short">1</span> - <span class="badge-long syllable-badge syllable-long">2</span></p>
+                    <p style="color: var(--gold-champagne); font-size: 0.95rem; margin-top: 1rem;"><em>Examples: Na-pa-san-di-da, Ba-da-khal-qi-yan</em></p>
+                </div>
+
+                <div class="glass-card">
+                    <h4 class="urdu-text" style="font-size: 1.5rem;">مفعولات</h4>
+                    <p><strong>Maf'oolaat</strong></p>
+                    <p>Weight: <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-long syllable-badge syllable-long">2</span> - <span class="badge-short syllable-badge syllable-short">1</span></p>
+                    <p style="color: var(--gold-champagne); font-size: 0.95rem; margin-top: 1rem;"><em>Examples: Raat-din-jaag-na, Haal-chaal-puch-na</em></p>
+                </div>
+            </div>
+
+            <div class="taqtee-container">
+                <h3 style="margin-top: 3rem;">Visualizing Taqtee: Mathematical Breakdown</h3>
+                <p>Let's map the foundational phonetic weights to a single word, and then apply it to an entire Misra (line).</p>
+                
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Word Breakdown: Mohabbat (محبت - Love)</div>
+                    <div style="margin-top: 1rem;">Spoken as: <strong>Mo - hab - bat</strong></div>
+                    <br>
+                    <div><span class="syntax-teal">Mo (م)</span> = Short Syllable <span class="badge-short syllable-badge syllable-short">1</span></div>
+                    <div><span class="syntax-teal">hab (حب)</span> = Long Syllable <span class="badge-long syllable-badge syllable-long">2</span></div>
+                    <div><span class="syntax-teal">bat (بت)</span> = Long Syllable <span class="badge-long syllable-badge syllable-long">2</span></div>
+                    <br>
+                    <div class="syntax-rose" style="font-weight: bold;">Total Rhythm Weight: 1-2-2 ➔ Matches Arkaan: Fa'oolun (فعولن)</div>
+                </div>
+
+                <div class="taqtee-block math-block" style="margin-top: 2rem;">
+                    <div class="syntax-champagne">// Misra Breakdown (Taqtee of a full line by Mirza Ghalib)</div>
+                    <div class="urdu-text" style="font-size: 1.6rem; text-align: right; color: var(--text-light); margin: 1.5rem 0;">نہ تھا کچھ تو خدا تھا، کچھ نہ ہوتا تو خدا ہوتا</div>
+                    <div style="font-family: var(--font-poetry-eng); color: var(--gold-champagne); font-size: 1.2rem; margin-bottom: 2rem;">Na tha kuch to Khuda tha, kuch na hota to Khuda hota</div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+                        <span class="syntax-teal">Na (1) | tha (2) | kuch (2) | to (2)</span> 
+                        <span class="syntax-rose">➔ 1-2-2-2 (Mafaa'eelun)</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+                        <span class="syntax-teal">Khu (1) | da (2) | tha (2) | kuch (2)</span> 
+                        <span class="syntax-rose">➔ 1-2-2-2 (Mafaa'eelun)</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+                        <span class="syntax-teal">Na (1) | ho (2) | ta (2) | to (2)</span> 
+                        <span class="syntax-rose">➔ 1-2-2-2 (Mafaa'eelun)</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+                        <span class="syntax-teal">Khu (1) | da (2) | ho (2) | ta (2)</span> 
+                        <span class="syntax-rose">➔ 1-2-2-2 (Mafaa'eelun)</span>
+                    </div>
+                    
+                    <br>
+                    <div class="syntax-champagne" style="font-weight: bold; font-size: 1.1rem;">Verdict: Beher-e-Hazaj (The beat 1-2-2-2 repeats exactly four times)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Classical Meters -->
+        <section id="section-6" class="glass-section">
+            <h2>6. Deep Dives: The 7 Major Classical Meters (بحر)</h2>
+            <p>While classical prosody (<em>Ilm-e-Arooz</em>) cataloged nineteen theoretical meters, practical Urdu poetry operates primarily on seven master frameworks. Over ninety-five percent of all ghazals and nazms in Urdu literary history are composed within these seven foundational rhythms.</p>
+            <p>Below is the complete mathematical breakdown, structural formula, and classical poetry illustrations for all seven core meters.</p>
+
+            <!-- 1. BEHER-E-HAZAJ -->
+            <div class="glass-card theme-mathematical" style="margin-bottom: 3rem;">
+                <h3 class="urdu-text" style="font-size: 1.8rem; text-align: left; color: var(--gold-champagne);">1. Beher-e-Hazaj (بحرِ ہزج)</h3>
+                <p>Known for its flowing, lyrical, and inherently song-like cadence, Hazaj is built on a single repeating Rukn: <strong>Mafaa'eelun (مفاعیلن)</strong>.</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <strong>Foundational Arkaan:</strong> <span class="urdu-text" style="font-size: 1.2rem;">مفاعیلن مفاعیلن مفاعیلن مفاعیلن</span><br>
+                    <strong>Mathematical Pattern:</strong> <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span>
+                </div>
+
+                <div class="poetry-couplet">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 1: Mirza Ghalib</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>نہ تھا کچھ تو خدا تھا، کچھ نہ ہوتا تو خدا ہوتا</span>
+                        <span>ڈبویا مجھ کو ہونے نے، نہ ہوتا میں تو کیا ہوتا</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Na tha kuch to Khuda tha, kuch na hota to Khuda hota</p>
+                        <p>Duboya mujh ko hone ne, na hota main to kya hota</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: When there was nothing, God was there; had nothing been, God would have been. My existence brought about my ruin; had I not been, what would I have been?</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Misra 1 & 2</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Na tha kuch to (1-2-2-2)</span> | <span class="syntax-teal">Khu da tha kuch (1-2-2-2)</span> | <span class="syntax-teal">Na ho ta to (1-2-2-2)</span> | <span class="syntax-teal">Khu da ho ta (1-2-2-2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">Du bo ya mujh (1-2-2-2)</span> | <span class="syntax-teal">k_ho ne ne (1-2-2-2)</span> | <span class="syntax-teal">na ho ta main (1-2-2-2)</span> | <span class="syntax-teal">to kya ho ta (1-2-2-2)</span></div>
+                    <div class="syntax-rose" style="margin-top: 0.5rem;">Note: In line 2, 'ko' is phonetically shortened to 'k' (Isqaat) to maintain the short syllable [1] weight.</div>
+                </div>
+
+                <div class="poetry-couplet" style="margin-top: 2rem;">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 2: Hasrat Mohani</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>نہیں آتی تو یاد ان کی مہینوں تک نہیں آتی</span>
+                        <span>مگر جب یاد آتے ہیں تو اکثر یاد آتے ہیں</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Nahi aati to yaad unki mahino tak nahi aati</p>
+                        <p>Magar jab yaad aate hain to aksar yaad aate hain</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: When her memory does not come, it doesn't come for months; but when it does come, it comes constantly.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Phonetic Merging Across Words</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Na hi aa ti (1-2-2-2)</span> | <span class="syntax-teal">to ya dun ki (1-2-2-2)</span> | <span class="syntax-teal">ma hi no tak (1-2-2-2)</span> | <span class="syntax-teal">na hi aa ti (1-2-2-2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">Ma gar jab yaa (1-2-2-2)</span> | <span class="syntax-teal">d_aa te hain (1-2-2-2)</span> | <span class="syntax-teal">to ak sar yaa (1-2-2-2)</span> | <span class="syntax-teal">d_aa te hain (1-2-2-2)</span></div>
+                    <div class="syntax-rose" style="margin-top: 0.5rem;">Note: 'yaad unki' merges phonetically into 'to-ya-dun-ki', seamlessly connecting across word boundaries.</div>
+                </div>
+            </div>
+
+            <!-- 2. BEHER-E-RAMAL -->
+            <div class="glass-card theme-romantic" style="margin-bottom: 3rem;">
+                <h3 class="urdu-text" style="font-size: 1.8rem; text-align: left; color: var(--gold-champagne);">2. Beher-e-Ramal (بحرِ رمل)</h3>
+                <p>Favored for deep narrative, emotional, and reflective verses. Its core beat is <strong>Faa'ilaatun (فاعلاتن)</strong>, with the terminal beat frequently shortened via <em>Zahaaf</em> to Faa'ilun (2-1-2) or Faa'lun (2-2).</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <strong>Foundational Arkaan (Mahzoof):</strong> <span class="urdu-text" style="font-size: 1.2rem;">فاعلاتن فاعلاتن فاعلاتن فاعلن</span><br>
+                    <strong>Mathematical Pattern:</strong> <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span>
+                </div>
+
+                <div class="poetry-couplet">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 1: Tasleem Fazli</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>رفتہ رفتہ وہ میری ہستی کا سامان ہو گئے</span>
+                        <span>پہلے جاں، پھر جانِ جاں، پھر جانِ جاناں ہو گئے</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Rafta rafta woh meri hasti ka saaman ho gaye</p>
+                        <p>Pehle jaan, phir jaan-e-jaan, phir jaan-e-jaana ho gaye</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: Slowly, gradually, she became the substance of my existence; first life, then the soul of my life, and then the beloved of my soul.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Misra 1 & 2</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Raf ta raf ta (2-1-2-2)</span> | <span class="syntax-teal">woh me ri has (2-1-2-2)</span> | <span class="syntax-teal">ti ka saa ma (2-1-2-2)</span> | <span class="syntax-teal">n_ho ga ye (2-1-2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">Peh le jaa n_phir (2-1-2-2)</span> | <span class="syntax-teal">jaa n_e jaa n_phir (2-1-2-2)</span> | <span class="syntax-teal">jaa n_e jaa na (2-1-2-2)</span> | <span class="syntax-teal">ho ga ye (2-1-2)</span></div>
+                </div>
+
+                <div class="poetry-couplet" style="margin-top: 2rem;">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 2: Mirza Ghalib</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>ابنِ مریم ہوا کرے کوئی</span>
+                        <span>میرے دکھ کی دوا کرے کوئی</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Ibn-e-Maryam hua kare koi</p>
+                        <p>Mere dukh ki dawa kare koi</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: Let someone be the Son of Mary if they wish; what matters to me is if someone cures my pain.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Shortened Terminal Beat Variation</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Ib n_e Mar yam (2-1-2-2)</span> | <span class="syntax-teal">hu a ka re (2-1-2-2)</span> | <span class="syntax-teal">ko i (2-2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">Me re dukh ki (2-1-2-2)</span> | <span class="syntax-teal">da wa ka re (2-1-2-2)</span> | <span class="syntax-teal">ko i (2-2)</span></div>
+                    <div class="syntax-rose" style="margin-top: 0.5rem;">Note: Here, the final beat is shortened to Faa'lun (2-2), a standard terminal contraction in Ramal.</div>
+                </div>
+            </div>
+
+            <!-- 3. BEHER-E-MUTAQARIB -->
+            <div class="glass-card theme-spiritual" style="margin-bottom: 3rem;">
+                <h3 class="urdu-text" style="font-size: 1.8rem; text-align: left; color: var(--gold-champagne);">3. Beher-e-Mutaqarib (بحرِ متقارب)</h3>
+                <p>A brisk, rapid-marching meter favored for epic poetry, anthems, and vibrant ghazals. Built on the repeating short beat: <strong>Fa'oolun (فعولن)</strong>.</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <strong>Foundational Arkaan:</strong> <span class="urdu-text" style="font-size: 1.2rem;">فعولن فعولن فعولن فعولن</span><br>
+                    <strong>Mathematical Pattern:</strong> <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span>
+                </div>
+
+                <div class="poetry-couplet">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 1: Sheikh Ibrahim Zauq</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>جگہ جی لگانے کی دنیا نہیں ہے</span>
+                        <span>یہ عبرت کی جا ہے تماشا نہیں ہے</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Jaga ji lagane ki dunya nahi hai</p>
+                        <p>Yeh ibrat ki jaa hai tamasha nahi hai</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: This world is not a place to attach your heart; it is a place of warning, not a carnival spectacle.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Misra 1 & 2</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Ja ga ji (1-2-2)</span> | <span class="syntax-teal">la ga ne (1-2-2)</span> | <span class="syntax-teal">ki dun ya (1-2-2)</span> | <span class="syntax-teal">na hi hai (1-2-2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">Ye ib rat (1-2-2)</span> | <span class="syntax-teal">ki jaa hai (1-2-2)</span> | <span class="syntax-teal">ta maa sha (1-2-2)</span> | <span class="syntax-teal">na hi hai (1-2-2)</span></div>
+                </div>
+
+                <div class="poetry-couplet" style="margin-top: 2rem;">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 2: Classical Folk Verse</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>مجھے اپنی مستی پہ نازاں تو ہوگا</span>
+                        <span>اسے میری حالت کا عرفاں تو ہوگا</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Mujhe apni masti pe nazaan to hoga</p>
+                        <p>Use meri halat ka irfan to hoga</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: I may be proud of my ecstasy, but surely she will eventually understand my true condition.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Splitting Words Across Beats</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Mu jhe ap (1-2-2)</span> | <span class="syntax-teal">ni mas ti (1-2-2)</span> | <span class="syntax-teal">pe na zan (1-2-2)</span> | <span class="syntax-teal">to ho ga (1-2-2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">U se me (1-2-2)</span> | <span class="syntax-teal">ri ha lat (1-2-2)</span> | <span class="syntax-teal">ka ir fan (1-2-2)</span> | <span class="syntax-teal">to ho ga (1-2-2)</span></div>
+                    <div class="syntax-rose" style="margin-top: 0.5rem;">Note: Notice how the word 'apni' splits across beat 1 ('ap') and beat 2 ('ni').</div>
+                </div>
+            </div>
+
+            <!-- 4. BEHER-E-MUZARE -->
+            <div class="glass-card" style="margin-bottom: 3rem;">
+                <h3 class="urdu-text" style="font-size: 1.8rem; text-align: left; color: var(--gold-champagne);">4. Beher-e-Muzare (بحرِ مضارع)</h3>
+                <p>A sophisticated mixed meter combining multiple distinct Arkaan to create a haunting, elegant cadence. Heavily used by classical masters like Ghalib and Momin.</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <strong>Foundational Sequence:</strong> <span class="urdu-text" style="font-size: 1.2rem;">مفعولُ فاعلاتُ مفاعیلُ فاعلن</span><br>
+                    <strong>Practical Scansion Pattern:</strong> <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span> | <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-short">1</span> | <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-long">2</span>
+                </div>
+
+                <div class="poetry-couplet">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 1: Mirza Ghalib</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>دلِ ناداں تجھے ہوا کیا ہے</span>
+                        <span>آخر اس درد کی دوا کیا ہے</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Dil-e-nadaan tujhe hua kya hai</p>
+                        <p>Aakhir is dard ki dawa kya hai</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: O naive heart, what has happened to you? What, after all, is the cure for this pain?</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Misra 1 & 2</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Dil-e-naa (2-1-2)</span> | <span class="syntax-teal">daan tu jhe (2-1-2)</span> | <span class="syntax-teal">hu-a kya (1-2-2)</span> | <span class="syntax-teal">hai (2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">Aa-khi-ris (2-1-2)</span> | <span class="syntax-teal">dar-d_ki (2-1-2)</span> | <span class="syntax-teal">da-wa kya (1-2-2)</span> | <span class="syntax-teal">hai (2)</span></div>
+                </div>
+
+                <div class="poetry-couplet" style="margin-top: 2rem;">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 2: Momin Khan Momin</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>تم میرے پاس ہوتے ہو گویا</span>
+                        <span>جب کوئی دوسرا نہیں ہوتا</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Tum mere paas hote ho goya</p>
+                        <p>Jab koi doosra nahi hota</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: You are right beside me, as if, whenever no one else is around.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Momin's Intimate Cadence</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Tum me-re (2-1-2)</span> | <span class="syntax-teal">paas ho-te (2-1-2)</span> | <span class="syntax-teal">ho go-ya (1-2-2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">Jab ko-i (2-1-2)</span> | <span class="syntax-teal">doo-s-ra (2-1-2)</span> | <span class="syntax-teal">na-hi ho-ta (1-2-2)</span> | <span class="syntax-teal">ta (2)</span></div>
+                </div>
+            </div>
+
+            <!-- 5. BEHER-E-KHAFEEF -->
+            <div class="glass-card theme-mathematical" style="margin-bottom: 3rem;">
+                <h3 class="urdu-text" style="font-size: 1.8rem; text-align: left; color: var(--gold-champagne);">5. Beher-e-Khafeef (بحرِ خفیف)</h3>
+                <p>Meaning "light" or "slight," Khafeef is a short, conversational mixed meter. Perfect for intimate, introspective, or sorrowful dialogue that feels like speech.</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <strong>Foundational Sequence:</strong> <span class="urdu-text" style="font-size: 1.2rem;">فاعلاتن مفاعلن فعلن</span><br>
+                    <strong>Mathematical Pattern:</strong> <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span> | <span class="badge-short">1</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span>
+                </div>
+
+                <div class="poetry-couplet">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 1: Mirza Ghalib</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>درد منّت کشِ دوا نہ ہوا</span>
+                        <span>میں نہ اچھا ہوا، برا نہ ہوا</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Dard minnat kash-e-dawa na hua</p>
+                        <p>Main na achha hua, bura na hua</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: My pain did not become indebted to medicine; I did not heal, but at least it didn't turn out bad.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Misra 1 & 2</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Dar-d_min-nat (2-1-2-2)</span> | <span class="syntax-teal">ka-sh_e-da-wa (1-2-1-2)</span> | <span class="syntax-teal">na hu-a (1-1-2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">Main na ach-ha (2-1-2-2)</span> | <span class="syntax-teal">hu-a bu-ra (1-2-1-2)</span> | <span class="syntax-teal">na hu-a (1-1-2)</span></div>
+                </div>
+
+                <div class="poetry-couplet" style="margin-top: 2rem;">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 2: Mir Taqi Mir</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>دیکھ تو دل کہ جاں سے اٹھتا ہے</span>
+                        <span>یہ دھواں سا کہاں سے اٹھتا ہے</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Dekh to dil ke jaan se uthta hai</p>
+                        <p>Yeh dhuan sa kahan se uthta hai</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: Look! Is it rising from the heart or from the soul? From where does this smoke-like plume arise?</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Mir's Conversational Flow</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Dekh to dil (2-1-2-2)</span> | <span class="syntax-teal">ja-an-se uth (1-2-1-2)</span> | <span class="syntax-teal">ta hai (1-2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">Yeh dhu-an sa (2-1-2-2)</span> | <span class="syntax-teal">ka-han se uth (1-2-1-2)</span> | <span class="syntax-teal">ta hai (1-2)</span></div>
+                </div>
+            </div>
+
+            <!-- 6. BEHER-E-MUJTASS -->
+            <div class="glass-card theme-romantic" style="margin-bottom: 3rem;">
+                <h3 class="urdu-text" style="font-size: 1.8rem; text-align: left; color: var(--gold-champagne);">6. Beher-e-Mujtass (بحرِ مجتث)</h3>
+                <p>Extremely popular in both classical and modern ghazals due to its bouncing, rhythmic alternating pattern between short and long beats.</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <strong>Foundational Sequence:</strong> <span class="urdu-text" style="font-size: 1.2rem;">مفاعلن فاعلاتن مفاعلن فعلن</span><br>
+                    <strong>Mathematical Pattern:</strong> <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span> | <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-long">2</span> | <span class="badge-short">1</span>-<span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span> | <span class="badge-long">2</span>-<span class="badge-long">2</span>
+                </div>
+
+                <div class="poetry-couplet">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 1: Allama Iqbal</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>ستاروں سے آگے جہاں اور بھی ہیں</span>
+                        <span>ابھی عشق کے امتحان اور بھی ہیں</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Sitaaron se aage jahan aur bhi hain</p>
+                        <p>Abhi ishq ke imtehaan aur bhi hain</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: Beyond the stars lie yet other worlds; there are still further trials of love awaiting you.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Misra 1 & 2</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Si-ta-ro se (1-2-1-2)</span> | <span class="syntax-teal">Aa-ge ja-han (2-1-2-2)</span> | <span class="syntax-teal">au-r bhi (1-2-2)</span> | <span class="syntax-teal">hain (2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">A-bhi ish-q (1-2-1-2)</span> | <span class="syntax-teal">ke im-te-haan (2-1-2-2)</span> | <span class="syntax-teal">au-r bhi (1-2-2)</span> | <span class="syntax-teal">hain (2)</span></div>
+                </div>
+
+                <div class="poetry-couplet" style="margin-top: 2rem;">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 2: Mirza Ghalib</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>یہ نہ تھی ہماری قسمت کہ وصالِ یار ہوتا</span>
+                        <span>اگر اور جیتے رہتے یہی انتظار ہوتا</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Yeh na thi hamari qismat ke wisaal-e-yaar hota</p>
+                        <p>Agar aur jeete rehte yehi intezar hota</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: It was not my destiny to unite with my beloved; had I lived any longer, it would have been the exact same waiting.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Classical Long Cadence</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Ye na thi ha-ma-ri (1-2-1-2)</span> | <span class="syntax-teal">qis-mat ke wi (2-1-2-2)</span> | <span class="syntax-teal">saa-le-yaa-r (1-2-1-2)</span> | <span class="syntax-teal">ho-ta (2-2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">A-gar au-r (1-2-1-2)</span> | <span class="syntax-teal">jee-te reh-te (2-1-2-2)</span> | <span class="syntax-teal">ye-hi in-te (1-2-1-2)</span> | <span class="syntax-teal">zaa-r ho-ta (2-1-2-2)</span></div>
+                </div>
+            </div>
+
+            <!-- 7. BEHER-E-MUTADARIK -->
+            <div class="glass-card theme-spiritual" style="margin-bottom: 1rem;">
+                <h3 class="urdu-text" style="font-size: 1.8rem; text-align: left; color: var(--gold-champagne);">7. Beher-e-Mutadarik (بحرِ متدارک)</h3>
+                <p>A driving, staccato meter defined by its steady drumbeat pulse. It creates an urgent, marching rhythm ideal for prayers, anthems, or persistent longing.</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <strong>Foundational Arkaan:</strong> <span class="urdu-text" style="font-size: 1.2rem;">فاعلن فاعلن فاعلن فاعلن</span><br>
+                    <strong>Mathematical Pattern:</strong> <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span> | <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span> | <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span> | <span class="badge-long">2</span>-<span class="badge-short">1</span>-<span class="badge-long">2</span>
+                </div>
+
+                <div class="poetry-couplet">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 1: Allama Iqbal</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>لب پہ آتی ہے دعا بن کے تمنا میری</span>
+                        <span>زندگی شمع کی صورت ہو الٰہی میری</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Lab pe aati hai dua ban ke tamanna meri</p>
+                        <p>Zindagi shama ki surat ho ilahi meri</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: My longing comes to my lips as a prayer: O God, may my life be like a candle that illuminates the dark.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Misra 1 & 2</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Lab pe aa (2-1-2)</span> | <span class="syntax-teal">ti hai du (2-1-2)</span> | <span class="syntax-teal">a ban ke (2-1-2)</span> | <span class="syntax-teal">ta man na (2-1-2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">Zin da gi (2-1-2)</span> | <span class="syntax-teal">sha ma ki (2-1-2)</span> | <span class="syntax-teal">su rat ho (2-1-2)</span> | <span class="syntax-teal">i la hi (2-1-2)</span></div>
+                </div>
+
+                <div class="poetry-couplet" style="margin-top: 2rem;">
+                    <h4 style="color: #c58361; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Illustration 2: Mir Taqi Mir</h4>
+                    <div class="urdu-verse urdu-text">
+                        <span>عشق آنکھوں میں کب نہیں آتا</span>
+                        <span>لہو آتا ہے جب نہیں آتا</span>
+                    </div>
+                    <hr class="poetry-divider">
+                    <div class="english-translation">
+                        <p>Ishq aankhon mein kab nahi آتا</p>
+                        <p>Lahu aata hai jab nahi آتا</p>
+                        <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <em>Translation: When does love not appear in my eyes? Whenever it does not come, blood flows instead.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="taqtee-block math-block">
+                    <div class="syntax-champagne">// Scansion (Taqtee) — Shortened Terminal Beat</div>
+                    <div style="margin-top: 0.5rem;"><span class="syntax-teal">Ish q aan (2-1-2)</span> | <span class="syntax-teal">khon me kab (2-1-2)</span> | <span class="syntax-teal">na hi aa (2-1-2)</span> | <span class="syntax-teal">ta (2)</span></div>
+                    <div style="margin-top: 0.25rem;"><span class="syntax-teal">La hu aa (2-1-2)</span> | <span class="syntax-teal">ta hai jab (2-1-2)</span> | <span class="syntax-teal">na hi aa (2-1-2)</span> | <span class="syntax-teal">ta (2)</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: Rhetorical Devices -->
+        <section id="section-7" class="glass-section">
+            <h2>7. Poetic Aesthetics & Rhetorical Devices (صنائع بدائع)</h2>
+            <p>Structure and rhythm provide the fundamental architecture of a poem, but rhetorical devices—known classically as <strong>Sanaaye Badaaye (صنائع بدائع)</strong>—give it soul, subtlety, color, and layered depth. Here are four essential devices used by classical masters.</p>
+
+            <div class="comparison-grid">
+                <!-- Talmeeh -->
+                <div class="glass-card theme-spiritual">
+                    <h3 class="urdu-text" style="font-size: 1.5rem;">تلمیح</h3>
+                    <h3>Talmeeh (Historical Allusion)</h3>
+                    <p>A device where a single word, name, or phrase references a well-known historical, religious, or mythological story, instantly bringing an entire epic context into a two-line verse.</p>
+                    
+                    <div class="poetry-couplet">
+                        <div class="urdu-verse urdu-text">
+                            <span>کیا فرض ہے کہ سب کو ملے ایک سا جواب</span>
+                            <span>آؤ نہ ہم بھی سیر کریں کوہِ طور کی</span>
+                        </div>
+                        <hr class="poetry-divider">
+                        <div class="english-translation">
+                            <p>Kya farz hai ke sab ko mile ek sa jawab</p>
+                            <p>Aao na hum bhi sair karein Koh-e-Toor ki</p>
+                            <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                                <em>Translation: Is it written that everyone must receive the same response? Come, let us also take a journey to Mount Sinai (Koh-e-Toor).</em><br><br>
+                                <strong style="color: var(--gold-champagne);">The Device:</strong> <em>Koh-e-Toor</em> (Mount Sinai) instantly evokes the theological story of Prophet Moses asking to see the Divine Light, compressing a profound narrative into three words.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Husn-e-Ta'leel -->
+                <div class="glass-card theme-romantic">
+                    <h3 class="urdu-text" style="font-size: 1.5rem;">حسنِ تعلیل</h3>
+                    <h3>Husn-e-Ta'leel (Poetic Etiology)</h3>
+                    <p>The art of inventing a strikingly romantic, emotional, or magical cause for a real, natural phenomenon—replacing scientific reality with poetic truth.</p>
+                    
+                    <div class="poetry-couplet">
+                        <div class="urdu-verse urdu-text">
+                            <span>پیاسی جو تھی سپاہِ خدا تین رات کی</span>
+                            <span>ساحل سے سر پٹکتی تھی امواجِ بحر بھی</span>
+                        </div>
+                        <hr class="poetry-divider">
+                        <div class="english-translation">
+                            <p>Pyaasi jo thi sipah-e-khuda teen raat ki</p>
+                            <p>Sahil se sar patakti thi amwaj-e-bahr bhi</p>
+                            <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                                <em>Translation: Seeing that God's army had been thirsty for three long nights, even the ocean waves were banging their heads against the shore in grief.</em><br><br>
+                                <strong style="color: var(--gold-champagne);">The Device:</strong> Waves crash onto the shore due to fluid dynamics, but the poet claims they crash out of agonized helplessness because they cannot reach the thirsty martyrs of Karbala.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tazaad -->
+                <div class="glass-card">
+                    <h3 class="urdu-text" style="font-size: 1.5rem;">تضاد / طباق</h3>
+                    <h3>Tazaad (Antithesis & Contrast)</h3>
+                    <p>Juxtaposing two directly opposite concepts (such as life/death, day/night, union/separation) within a single couplet to heighten emotional tension and philosophical impact.</p>
+                    
+                    <div class="poetry-couplet">
+                        <div class="urdu-verse urdu-text">
+                            <span>صبح ہوتی ہے، شام ہوتی ہے</span>
+                            <span>عمر یوں ہی تمام ہوتی ہے</span>
+                        </div>
+                        <hr class="poetry-divider">
+                        <div class="english-translation">
+                            <p>Subah hoti hai, shaam hoti hai</p>
+                            <p>Umr yunhi tamam hoti hai</p>
+                            <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                                <em>Translation: Morning arrives, evening arrives... and in this endless cycle, a whole life comes to its quiet end.</em><br><br>
+                                <strong style="color: var(--gold-champagne);">The Device:</strong> Contrasting <em>Subah</em> (morning) and <em>Shaam</em> (evening) illustrates the relentless, routine passage of human existence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mura'at-un-Nazeer -->
+                <div class="glass-card theme-mathematical">
+                    <h3 class="urdu-text" style="font-size: 1.5rem;">مراعات النظیر</h3>
+                    <h3>Mura'at-un-Nazeer (Semantic Harmony)</h3>
+                    <p>Gathering a cluster of words belonging to the same family, ecosystem, or thematic domain within a verse without making an explicit simile or comparison.</p>
+                    
+                    <div class="poetry-couplet">
+                        <div class="urdu-verse urdu-text">
+                            <span>پھٹتا ہے سینہ گل کا، بلبل ہے غم میں باغ کے</span>
+                            <span>آیا ہے فصلِ گل میں یہ کانٹا نکل کے کیا</span>
+                        </div>
+                        <hr class="poetry-divider">
+                        <div class="english-translation">
+                            <p>Phatta hai seena gul ka, bulbul hai gham mein baag ke</p>
+                            <p>Aaya hai fasl-e-gul mein yeh kaanta nikal ke kya</p>
+                            <p style="color: #D1D5DB; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.95rem; margin-top: 0.5rem;">
+                                <em>Translation: The rose's heart tears open; the nightingale grieves for the garden. What is this thorn that has surfaced in the season of blooms?</em><br><br>
+                                <strong style="color: var(--gold-champagne);">The Device:</strong> Uniting <em>Gul</em> (rose), <em>Bulbul</em> (nightingale), <em>Baag</em> (garden), <em>Fasl-e-Gul</em> (springtime), and <em>Kaanta</em> (thorn) creates atmospheric cohesion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: Major Poetic Genres -->
+        <section id="section-8" class="glass-section">
+            <h2>8. Major Poetic Genres (اصنافِ سخن)</h2>
+            <p>While the Ghazal reigns as the undisputed king of Urdu poetry, poets select different narrative architectures depending on the story, emotion, or philosophical inquiry they wish to convey.</p>
+
+            <div class="glass-table-wrapper" style="overflow-x: auto; margin: 2rem 0;">
+                <table class="glass-table elegant-table">
+                    <thead>
+                        <tr>
+                            <th>Genre (صنف)</th>
+                            <th>Structural Architecture</th>
+                            <th>Core Themes & Purpose</th>
+                            <th>Master Exemplars</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600; color: var(--gold-champagne);">Ghazal<br><span class="urdu-text" style="font-size: 1.1rem;">غزل</span></td>
+                            <td>Collection of independent couplets (Ashaar) bound by meter (Beher), rhyme (Qafiya), and refrain (Radif).</td>
+                            <td>Unrequited love, mystical devotion, socio-political critique, human mortality, and existential reflection.</td>
+                            <td>Mir Taqi Mir, Mirza Ghalib, Momin, Faiz Ahmad Faiz</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; color: var(--gold-champagne);">Nazm<br><span class="urdu-text" style="font-size: 1.1rem;">نظم</span></td>
+                            <td>Continuous thematic poem with varying verse forms (rhymed, free verse, or blank verse).</td>
+                            <td>Single continuous theme, storytelling, political anthems, philosophy, and personal narrative arc.</td>
+                            <td>Allama Iqbal, Faiz Ahmad Faiz, Sahir Ludhianvi, Nun Meem Rashid</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; color: var(--gold-champagne);">Marsiya<br><span class="urdu-text" style="font-size: 1.1rem;">مرثیہ</span></td>
+                            <td>Typically written in Musaddas stanzas (6 lines: AAAABB pattern).</td>
+                            <td>Epic elegies depicting the heroism, trials, and martyrdom of Imam Hussain and his companions at Karbala.</td>
+                            <td>Mir Anees, Mirza Dabeer</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; color: var(--gold-champagne);">Qasida<br><span class="urdu-text" style="font-size: 1.1rem;">قصیدہ</span></td>
+                            <td>Long formal poem adhering strictly to a single Ghazal-like rhyme scheme throughout.</td>
+                            <td>Grand panegyrics written in praise of patrons, kings, or spiritual personalities; demands vast vocabulary.</td>
+                            <td>Mirza Sauda, Sheikh Ibrahim Zauq</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; color: var(--gold-champagne);">Masnavi<br><span class="urdu-text" style="font-size: 1.1rem;">مثنوی</span></td>
+                            <td>Sequential rhyming couplets (AA BB CC DD...). Each couplet introduces a new rhyme.</td>
+                            <td>Lengthy narrative epics, allegorical tales, romantic fables, and detailed philosophical discourses.</td>
+                            <td>Mir Hasan (Sahr-ul-Bayaan), Daya Shankar Naseem</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 9: Delhi vs Lucknow -->
+        <section id="section-9" class="glass-section">
+            <h2>9. The Rival Schools: Delhi vs. Lucknow (دبستانِ دہلی اور لکھنؤ)</h2>
+            <p>To fully appreciate classical Urdu verse, one must understand its two great historical epicenters. The contrast between Delhi and Lucknow reflects a fascinating division between inward angst and outward aesthetic mastery.</p>
+
+            <div class="comparison-grid">
+                <div class="glass-card theme-spiritual">
+                    <h3 class="urdu-text" style="font-size: 1.8rem; text-align: left;">دبستانِ دہلی</h3>
+                    <h3>Dabistan-e-Delhi — The Inward Soul</h3>
+                    <p><strong>Historical Context:</strong> Forged in an era of political decline, foreign invasions, and siege in Delhi.</p>
+                    <ul style="padding-left: 1.2rem; margin-bottom: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Aesthetic Goal:</strong> Deeply introspective, melancholic, mystical (Tasawwuf), and emotionally raw.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Linguistic Style:</strong> Prioritizes heart-touching simplicity (<em>Saadgi</em>) and internal depth over ornate verbal decoration.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Dominant Subject:</strong> The inner anguish of the human heart and cosmic solitude.</li>
+                    </ul>
+                    <p style="color: var(--accent-sage);"><strong>Pioneers:</strong> Mir Taqi Mir, Mirza Ghalib, Momin Khan Momin, Khwaja Mir Dard.</p>
+                </div>
+
+                <div class="glass-card theme-romantic">
+                    <h3 class="urdu-text" style="font-size: 1.8rem; text-align: left;">دبستانِ لکھنؤ</h3>
+                    <h3>Dabistan-e-Lucknow — The Outward Craft</h3>
+                    <p><strong>Historical Context:</strong> Nurtured in the opulent, peaceful, and luxurious royal courts of Awadh.</p>
+                    <ul style="padding-left: 1.2rem; margin-bottom: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Aesthetic Goal:</strong> Highly ornamental, playful, linguistically polished, and focused on sensory elegance.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Linguistic Style:</strong> Celebrates complex wordplay, courtly etiquette (<em>Tehzeeb</em>), and technical mastery of idiom (<em>Ruzmarra</em>).</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Dominant Subject:</strong> Physical beauty, romantic dialogue, and linguistic artistry.</li>
+                    </ul>
+                    <p style="color: var(--accent-rose);"><strong>Pioneers:</strong> Shaikh Imam Bakhsh Nasikh, Khwaja Haidar Ali Aatish, Insha Allah Khan, Mir Anees.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONCLUDING SUMMARY -->
+        <section id="concluding-summary" class="glass-section" style="margin-top: 4rem; padding: 3rem 2rem;">
+            <div style="text-align: center; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Masterclass Summary (خلاصہ)</h2>
+                <p style="font-size: 1.1rem; max-width: 750px; margin: 0 auto;">
+                    A quick recap of the foundational pillars you have mastered across this guide:
+                </p>
+            </div>
+
+            <div class="comparison-grid" style="margin-bottom: 3rem;">
+                <div class="glass-card">
+                    <h3 style="color: var(--gold-champagne); font-size: 1.2rem; margin-bottom: 0.5rem;">1. Couplet Anatomy</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        The <strong>Sher</strong> is a standalone two-line universe built from a setup line (<em>Misra-e-Ula</em>) and an emotional punchline (<em>Misra-e-Sani</em>).
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <h3 style="color: var(--gold-champagne); font-size: 1.2rem; margin-bottom: 0.5rem;">2. Rhyme & Refrain</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        Couplets are anchored by <strong>Qafiya</strong> (the rhyming words) followed immediately by <strong>Radif</strong> (the exact repeating phrase).
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <h3 style="color: var(--gold-champagne); font-size: 1.2rem; margin-bottom: 0.5rem;">3. Ghazal Framework</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        Opened by the <strong>Matla</strong> (both lines rhyming) and closed by the <strong>Maqta</strong> containing the poet's signature pen name (<em>Takhallus</em>).
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <h3 style="color: var(--gold-champagne); font-size: 1.2rem; margin-bottom: 0.5rem;">4. Meter & Scansion</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        <strong>Beher</strong> governs line length via syllable weights (Short <span class="badge-short">1</span> / Long <span class="badge-long">2</span>), measured mathematically using <strong>Taqtee</strong> across 7 core meters.
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <h3 style="color: var(--gold-champagne); font-size: 1.2rem; margin-bottom: 0.5rem;">5. Rhetorical Devices</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        <strong>Sanaaye Badaaye</strong> adds soul using allusions (<em>Talmeeh</em>), poetic etiology (<em>Husn-e-Ta'leel</em>), contrast (<em>Tazaad</em>), and semantic family grouping (<em>Mura'at-un-Nazeer</em>).
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <h3 style="color: var(--gold-champagne); font-size: 1.2rem; margin-bottom: 0.5rem;">6. Genres & Schools</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        Spans forms like Ghazal, Nazm, Marsiya, and Qasida, balanced between <strong>Delhi's</strong> inward soul and <strong>Lucknow's</strong> courtly craftsmanship.
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; border-top: 1px solid var(--glass-border); padding-top: 2.5rem;">
+                <div class="urdu-text" style="font-size: 2.2rem; color: var(--gold-champagne); margin-bottom: 1rem;">
+                    شکریہ و مبارک باد
+                </div>
+                <h2 style="font-size: 1.8rem; margin-bottom: 1.2rem;">Congratulations & Thank You!</h2>
+                <p style="font-size: 1.15rem; line-height: 1.9; max-width: 750px; margin: 0 auto 1.5rem auto;">
+                    Thank you for your incredible patience and dedication in completing this journey through the fundamentals of <strong>Urdu Poetry 101 (اصولِ سخن)</strong>.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; max-width: 750px; margin: 0 auto 2rem auto; color: var(--gold-champagne);">
+                    With these structural rules, mathematical tools, and historical contexts under your belt, you are now fully equipped to step into any <em>mehfil</em>, decode classical couplets, and deeply appreciate the true soul of Urdu verse.
+                </p>
+                <div style="font-family: var(--font-poetry-eng); font-size: 1.3rem; color: var(--copper-warm); font-style: italic;">
+                    "Wah! The poetry is now yours to enjoy."
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-section" style="margin-top: 5rem; text-align: center; border-top: 1px solid var(--glass-border);">
+        <div class="urdu-text" style="font-size: 2rem; color: var(--gold-champagne); margin-bottom: 1rem;">ادب نواز</div>
+        <p style="font-family: var(--font-poetry-eng); font-size: 1.2rem; color: var(--gold-champagne);">"Sukhan ki shama se hum ne jalaaye hain kai chiragh..."</p>
+        <p style="font-size: 0.95rem; color: var(--text-main); margin-top: 1rem;">
+            Urdu Poetry 101: The Basics (اصولِ سخن) — A Masterclass in Poetic Craft.
+        </p>
+        <div style="margin-top: 2rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.4);">
+            &copy; 2026 AdabNawaz Guild. All rights reserved. Crafting digital heritage with mathematical precision.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

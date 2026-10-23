@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Comprehensive History of Urdu Poetry | AdabNawaz</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Cinzel, Playfair Display, Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            copper: {
+              DEFAULT: '#c58361',
+              light: '#e8c1ab',
+              dark: '#9a5c3e',
+            },
+            gold: '#F9E5C9',
+            midnight: '#020611',
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            playfair: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Color Palette & Background Effects */
+    body {
+      background-color: #020611;
+      color: #cbd5e1;
+      font-family: 'Inter', sans-serif;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(197, 131, 97, 0.12) 0%, transparent 55%),
+        radial-gradient(circle at 100% 40%, rgba(249, 229, 201, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 0% 75%, rgba(197, 131, 97, 0.06) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    /* Metallic Copper Gradient Text */
+    .metallic-text {
+      background: linear-gradient(135deg, #F9E5C9 0%, #e8c1ab 30%, #c58361 70%, #f3d0b5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Glassmorphism Card Container */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(197, 131, 97, 0.2);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(197, 131, 97, 0.4);
+    }
+
+    /* Left Accent Borders */
+    .accent-border-left {
+      border-left: 3px solid #c58361;
+    }
+
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #020611;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c58361;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #e8c1ab;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#c58361] selection:text-[#020611]">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 bg-[#020611]/90 backdrop-blur-md border-b border-[#c58361]/20 py-4 px-4 sm:px-8">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      
+      <!-- Left side: Branding with logo.png -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="relative w-10 h-10 rounded-full bg-gradient-to-br from-[#c58361] to-[#9a5c3e] p-[1px] shadow-lg shadow-[#c58361]/10 flex items-center justify-center overflow-hidden">
+          <img src="logo.png" alt="AdabNawaz Logo" class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div>
+          <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-[#F9E5C9] block leading-tight">AdabNawaz</span>
+          <span class="text-xs text-[#c58361]/80 font-mono tracking-wide">@adabnawaz.archive</span>
+        </div>
+      </a>
+
+      <!-- Right side: ONLY Back to Home Button -->
+      <a href="index.html" class="inline-flex items-center px-4 py-2 rounded-full border border-[#c58361]/40 bg-[#c58361]/10 text-[#e8c1ab] hover:bg-[#c58361]/20 hover:border-[#c58361] hover:text-[#F9E5C9] transition-all duration-300 text-xs sm:text-sm font-medium shadow-md">
+        <i class="fa-solid fa-arrow-left mr-2 text-xs"></i>Back to Home
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- HERO TITLE AREA -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 pt-12 pb-8 text-center">
+    <div class="inline-block px-3 py-1 rounded-full border border-[#c58361]/30 bg-[#c58361]/10 text-[#e8c1ab] text-xs tracking-widest uppercase mb-4 font-semibold">
+      Literary Archive & Historical Retrospective
+    </div>
+    
+    <!-- Hero Title (English Only) -->
+    <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight metallic-text mb-6">
+      A Comprehensive History of Urdu Poetry
+    </h1>
+    
+    <!-- Narrative Subtitle -->
+    <p class="font-playfair text-lg sm:text-xl text-slate-300 italic max-w-3xl mx-auto leading-relaxed">
+      Tracing eight centuries of lyrical elegance, philosophical inquiry, cultural synthesis, and revolutionary passion from medieval Deccan to the modern world.
+    </p>
+
+    <!-- Aesthetic Decorative Line -->
+    <div class="w-32 h-[2px] bg-gradient-to-r from-transparent via-[#c58361] to-transparent mx-auto mt-8"></div>
+  </section>
+
+
+  <!-- MAIN CONTENT CONTAINER (STRICT SINGLE COLUMN STACK) -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 pb-20 space-y-10 w-full">
+
+    <!-- HISTORICAL OVERVIEW CALLOUT BOX -->
+    <div class="glass-card rounded-2xl p-6 sm:p-8 accent-border-left">
+      <div class="flex items-center gap-3 mb-3">
+        <i class="fa-solid fa-book-open text-[#c58361] text-lg"></i>
+        <h2 class="font-cinzel text-xl font-bold text-[#F9E5C9]">Historical Foundations</h2>
+      </div>
+      <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+        Urdu poetry represents one of the world's most sophisticated and expressive literary traditions. Born out of the cultural confluence of Persian, Arabic, Turkish, and indigenous North Indian dialects (Khari Boli, Braj Bhasha, Awadhi), it evolved from a vernacular medium known as <span class="text-[#e8c1ab] font-medium">Rekhta</span> ("mixed") into a refined imperial language of philosophy, romance, political dissent, and spiritual transcendence.
+      </p>
+    </div>
+
+
+    <!-- SECTION 1: LINGUISTIC ORIGINS & FOUNDATIONAL ERA -->
+    <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+      <div class="border-b border-[#c58361]/20 pb-4">
+        <span class="text-xs font-mono text-[#c58361] uppercase tracking-wider block mb-1">Section 01 &bull; 13th to 17th Century</span>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-[#F9E5C9]">Linguistic Origins & Foundational Era</h2>
+        <p class="font-playfair text-slate-400 italic text-sm mt-1">From Hindavi roots in the North to the royal Dakhni courts of the Deccan.</p>
+      </div>
+
+      <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p>
+          While the linguistic roots of Urdu developed around Delhi and Punjab through military and commercial interactions, its early poetic nursery was nurtured far to the south in the Deccan kingdoms of Golconda and Bijapur. Before adopting the name <em class="text-[#e8c1ab]">Urdu</em>, the literary tongue was termed <em class="text-[#e8c1ab]">Hindavi</em>, <em class="text-[#e8c1ab]">Dakhni</em>, or <em class="text-[#e8c1ab]">Rekhta</em>.
+        </p>
+      </div>
+
+      <!-- Key Figures Stacked Vertically -->
+      <div class="space-y-4 pt-2">
+        <h3 class="font-cinzel text-lg font-semibold text-[#e8c1ab] flex items-center gap-2">
+          <i class="fa-solid fa-crown text-xs text-[#c58361]"></i> Foundational Luminaries
+        </h3>
+
+        <!-- Amir Khusrau -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <div class="flex justify-between items-baseline flex-wrap gap-2">
+            <h4 class="font-bold text-[#F9E5C9] text-base">Amir Khusrau (1253–1325)</h4>
+            <span class="text-xs font-mono text-[#c58361]">Delhi Sultanate</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            The Sufi mystic and scholar under Hazrat Nizamuddin Auliya. Widely revered as the progenitor of Hindavi verse, Khusrau seamlessly blended Persian couplets with local dialects, creating riddles, folk songs, and early Qawwali traditions.
+          </p>
+        </div>
+
+        <!-- Sultan Muhammad Quli Qutb Shah -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <div class="flex justify-between items-baseline flex-wrap gap-2">
+            <h4 class="font-bold text-[#F9E5C9] text-base">Sultan Muhammad Quli Qutb Shah (1565–1611)</h4>
+            <span class="text-xs font-mono text-[#c58361]">Golconda</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            The fifth Sultan of Golconda and founder of Hyderabad. He holds the historical distinction of compiling the first single-author collected manuscript (<em class="text-[#e8c1ab]">Kulliyat / Diwan</em>) in Dakhni Urdu, composing richly on love, nature, and Sufi devotion.
+          </p>
+        </div>
+
+        <!-- Wali Deccani -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <div class="flex justify-between items-baseline flex-wrap gap-2">
+            <h4 class="font-bold text-[#F9E5C9] text-base">Wali Deccani (1667–1707)</h4>
+            <span class="text-xs font-mono text-[#c58361]">Bridge to the North</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            The "Father of the Urdu Ghazal". When Wali brought his Dakhni ghazal collection to Delhi in 1700, he proved to the Persian-centric Mughal court that vernacular Rekhta could equal Persian in aesthetic elegance and philosophical depth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 2: INSTITUTIONAL FRAMEWORKS -->
+    <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+      <div class="border-b border-[#c58361]/20 pb-4">
+        <span class="text-xs font-mono text-[#c58361] uppercase tracking-wider block mb-1">Section 02 &bull; Cultural Architecture</span>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-[#F9E5C9]">Institutional Frameworks & Traditions</h2>
+        <p class="font-playfair text-slate-400 italic text-sm mt-1">The social customs, mentorships, and symposiums that preserved poetic rigor.</p>
+      </div>
+
+      <div class="space-y-4 pt-2">
+        <!-- Mushaira -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <h3 class="font-cinzel font-bold text-[#F9E5C9] text-base flex items-center gap-2">
+            <i class="fa-solid fa-users-line text-[#c58361] text-xs"></i> The Institution of Mushaira
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            The formal live poetic symposium where poets gather to recite before an audience. Governed by sophisticated etiquette (<em class="text-[#e8c1ab]">Aadab</em>), historically guided by the passing of a ceremonial candle (<em class="text-[#e8c1ab]">Shama</em>) to indicate the active speaker.
+          </p>
+        </div>
+
+        <!-- Tarahi Format -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <h3 class="font-cinzel font-bold text-[#F9E5C9] text-base flex items-center gap-2">
+            <i class="fa-solid fa-list-check text-[#c58361] text-xs"></i> Tarahi Format (Poetic Challenge)
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            A competitive format where participating poets are assigned a predetermined rhythmic model line (<em class="text-[#e8c1ab]">Misra-e-Tarah</em>) and meter, challenging each poet to craft superior verse under uniform constraints.
+          </p>
+        </div>
+
+        <!-- Ustad-Shagird -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <h3 class="font-cinzel font-bold text-[#F9E5C9] text-base flex items-center gap-2">
+            <i class="fa-solid fa-graduation-cap text-[#c58361] text-xs"></i> Ustad-Shagird Tradition & Islaah
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            The master-apprentice mentorship framework. Emerging poets (<em class="text-[#e8c1ab]">Shagird</em>) submitted their manuscripts to a recognized master (<em class="text-[#e8c1ab]">Ustad</em>) for rigorous correction (<em class="text-[#e8c1ab]">Islaah</em>) in prosody, diction, and metrical precision.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 3: CLASSICAL SCHOOLS & THE GOLDEN AGE -->
+    <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+      <div class="border-b border-[#c58361]/20 pb-4">
+        <span class="text-xs font-mono text-[#c58361] uppercase tracking-wider block mb-1">Section 03 &bull; 18th to 19th Century</span>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-[#F9E5C9]">Classical Schools & The Golden Age</h2>
+        <p class="font-playfair text-slate-400 italic text-sm mt-1">Delhi pathos, Awadh courtly splendor, populist street verse, and Ghalib's colossus.</p>
+      </div>
+
+      <div class="space-y-4 pt-2">
+        <h3 class="font-cinzel text-lg font-semibold text-[#e8c1ab]">The Two Great Classical Schools</h3>
+
+        <!-- Delhi School -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <h4 class="font-bold text-[#F9E5C9] text-base">The Delhi School (Dabistan-e-Dilli)</h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Forged amidst political decay, Delhi poetry emphasized deep inner sorrow, spiritual contemplation, and melancholy simplicity (<em class="text-[#e8c1ab]">Soz-o-Gudaz</em>). Championed by masters like <strong class="text-[#e8c1ab]">Mir Taqi Mir</strong> ("Khuda-e-Sukhan"), <strong class="text-[#e8c1ab]">Sauda</strong>, and <strong class="text-[#e8c1ab]">Khwaja Mir Dard</strong>.
+          </p>
+        </div>
+
+        <!-- Lucknow School -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <h4 class="font-bold text-[#F9E5C9] text-base">The Lucknow School (Dabistan-e-Lucknow)</h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Nurtured by the courtly wealth of Awadh, Lucknow focused on verbal ornamentation, sparkling wordplay, external beauty, and the epic mourning elegies of <strong class="text-[#e8c1ab]">Mir Anees</strong> and <strong class="text-[#e8c1ab]">Mirza Dabeer</strong>.
+          </p>
+        </div>
+
+        <!-- Populist Voice -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <h4 class="font-bold text-[#F9E5C9] text-base">Nazir Akbarabadi (1735–1830) &bull; The Populist Voice</h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Operating outside courtly elitism, Nazir celebrated common people, local bazaars, seasonal changes, and religious festivals (Holi, Diwali, Eid) in vibrant vernacular verse, becoming Urdu's first true democratic poet.
+          </p>
+        </div>
+
+        <!-- Golden Age Delhi -->
+        <div class="bg-[#020611]/80 rounded-xl p-6 border-2 border-[#c58361]/40 space-y-3">
+          <div class="flex justify-between items-baseline flex-wrap gap-2 border-b border-[#c58361]/20 pb-2">
+            <h4 class="font-cinzel font-bold text-[#F9E5C9] text-lg">The Sunset Peak of Delhi</h4>
+            <span class="text-xs font-mono text-[#F9E5C9] bg-[#c58361]/20 px-2 py-0.5 rounded">19th Century Court</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            The final decade before 1857 witnessed an astonishing concentration of genius under Emperor <strong class="text-[#e8c1ab]">Bahadur Shah Zafar</strong>. Led by royal mentor <strong class="text-[#e8c1ab]">Sheikh Ibrahim Zauq</strong>, romantic master <strong class="text-[#e8c1ab]">Dagh Dehlvi</strong>, and the supreme intellect of <strong class="text-[#e8c1ab]">Mirza Asadullah Khan Ghalib</strong> (1797–1869), whose existential wit and philosophical complexity transformed Urdu forever.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 4: IDEOLOGICAL REVOLUTIONS & LITERARY MOVEMENTS -->
+    <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+      <div class="border-b border-[#c58361]/20 pb-4">
+        <span class="text-xs font-mono text-[#c58361] uppercase tracking-wider block mb-1">Section 04 &bull; Late 19th to Mid 20th Century</span>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-[#F9E5C9]">Ideological Revolutions & Movements</h2>
+        <p class="font-playfair text-slate-400 italic text-sm mt-1">Post-1857 reform, philosophical awakening, and political resistance.</p>
+      </div>
+
+      <div class="space-y-4 pt-2">
+        <!-- Post-1857 Reformers -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <div class="flex justify-between items-baseline flex-wrap gap-2">
+            <h4 class="font-bold text-[#F9E5C9] text-base">Sir Syed Ahmad Khan & Altaf Hussain Hali</h4>
+            <span class="text-xs font-mono text-[#c58361]">Aligarh Movement</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Following the loss of Mughal rule in 1857, Hali penned <em class="text-[#e8c1ab]">Musaddas-e-Hali</em> and <em class="text-[#e8c1ab]">Muqaddama-e-Sher-o-Shairi</em>, demanding that poetry abandon decadent court themes to serve social reform, education, and national awakening.
+          </p>
+        </div>
+
+        <!-- Iqbal -->
+        <div class="bg-[#020611]/80 rounded-xl p-6 border-2 border-[#c58361]/40 space-y-3">
+          <div class="flex justify-between items-baseline flex-wrap gap-2 border-b border-[#c58361]/20 pb-2">
+            <h4 class="font-cinzel font-bold text-[#F9E5C9] text-lg">Allama Muhammad Iqbal (1877–1938)</h4>
+            <span class="text-xs font-mono text-[#F9E5C9] bg-[#c58361]/20 px-2 py-0.5 rounded">Philosophical Revival</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            The thinker-poet who revolutionized South Asian consciousness. Iqbal transformed verse into an instrument of dynamic action, selfhood (<em class="text-[#e8c1ab]">Khudi</em>), and spiritual renaissance through masterworks like <em class="text-[#e8c1ab]">Bang-e-Dra</em> and <em class="text-[#e8c1ab]">Bal-e-Jibril</em>.
+          </p>
+        </div>
+
+        <!-- Progressive Writers -->
+        <div class="bg-[#020611]/80 rounded-xl p-6 border-2 border-[#c58361]/40 space-y-3">
+          <div class="flex justify-between items-baseline flex-wrap gap-2 border-b border-[#c58361]/20 pb-2">
+            <h4 class="font-cinzel font-bold text-[#F9E5C9] text-lg">Progressive Writers' Movement (PWA)</h4>
+            <span class="text-xs font-mono text-[#c58361]">Anti-Imperialism & Labor Rights</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Formed in the 1930s, the PWA turned poetic art directly toward socialist realism, class conflict, and anti-colonial resistance. Led by <strong class="text-[#e8c1ab]">Faiz Ahmad Faiz</strong> (who famously combined romantic ghazal tropes with Marxist liberation), <strong class="text-[#e8c1ab]">Sahir Ludhianvi</strong>, and <strong class="text-[#e8c1ab]">Kaifi Azmi</strong>.
+          </p>
+        </div>
+
+        <!-- Modernist Counter-Movement -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <div class="flex justify-between items-baseline flex-wrap gap-2">
+            <h4 class="font-bold text-[#F9E5C9] text-base">Modernist Counter-Movement (Halqa-e-Arbab-e-Zouq)</h4>
+            <span class="text-xs font-mono text-[#c58361]">Existential Free Verse</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Rebellious innovators like <strong class="text-[#e8c1ab]">N.M. Rashed</strong> and <strong class="text-[#e8c1ab]">Mira Ji</strong> rejected overt political ideology in favor of individual psychology, stream-of-consciousness techniques, and free verse (<em class="text-[#e8c1ab]">Aazad Nazm</em>).
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 5: PARTITION TRAUMA & POST-1947 DIASPORIC VOICE -->
+    <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+      <div class="border-b border-[#c58361]/20 pb-4">
+        <span class="text-xs font-mono text-[#c58361] uppercase tracking-wider block mb-1">Section 05 &bull; Mid 20th Century</span>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-[#F9E5C9]">Partition Trauma & Post-1947 Voice</h2>
+        <p class="font-playfair text-slate-400 italic text-sm mt-1">Displacement, nostalgic longing, and the divided identity.</p>
+      </div>
+
+      <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p>
+          The tragic 1947 Partition of the subcontinent profoundly wounded Urdu literature. Millions were displaced, giving rise to poetry dealing with lost roots, fractured geography, urban alienation, and nostalgic mourning.
+        </p>
+      </div>
+
+      <!-- Key Figures Stacked Vertically -->
+      <div class="space-y-4 pt-2">
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <h4 class="font-bold text-[#F9E5C9] text-base">Nasir Kazmi (1925–1972)</h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Revived classical simplicity to capture post-partition sorrow, vacant streets, quiet nights, and the aching nostalgia for abandoned ancestral homes.
+          </p>
+        </div>
+
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <h4 class="font-bold text-[#F9E5C9] text-base">Muneer Niazi (1928–2006)</h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Master of eerie, haunting atmospheric imagery, expressing psychological dread, hesitation, and urban solitude in sharp, minimal couplets.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 6: MODERNITY, GENDER CONSCIOUSNESS & MASS CULTURE -->
+    <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+      <div class="border-b border-[#c58361]/20 pb-4">
+        <span class="text-xs font-mono text-[#c58361] uppercase tracking-wider block mb-1">Section 06 &bull; Late 20th to 21st Century</span>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-[#F9E5C9]">Modernity, Gender & Mass Culture</h2>
+        <p class="font-playfair text-slate-400 italic text-sm mt-1">Feminist empowerment, existential defiance, cinema, and digital resonance.</p>
+      </div>
+
+      <div class="space-y-4 pt-2">
+        <!-- Modern Masters Stacked -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <h4 class="font-bold text-[#F9E5C9] text-base">Bashir Badr & Ahmad Faraz</h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Bashir Badr brought simple contemporary conversational phrasing into everyday ghazals, while Ahmad Faraz stood as the preeminent master of romantic longing and political protest against dictatorship.
+          </p>
+        </div>
+
+        <!-- Jaun Elia -->
+        <div class="bg-[#020611]/80 rounded-xl p-6 border-2 border-[#c58361]/40 space-y-3">
+          <div class="flex justify-between items-baseline flex-wrap gap-2 border-b border-[#c58361]/20 pb-2">
+            <h4 class="font-cinzel font-bold text-[#F9E5C9] text-lg">Jaun Elia (1931–2002)</h4>
+            <span class="text-xs font-mono text-[#F9E5C9] bg-[#c58361]/20 px-2 py-0.5 rounded">Cult Icon of Nihilism</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Uncompromising philosopher-poet whose raw emotional volatility, existential sarcasm, and dramatic recitation style earned him unmatched modern popularity across global generations.
+          </p>
+        </div>
+
+        <!-- Feminist Consciousness -->
+        <div class="bg-[#020611]/80 rounded-xl p-6 border-2 border-[#c58361]/40 space-y-3">
+          <div class="flex justify-between items-baseline flex-wrap gap-2 border-b border-[#c58361]/20 pb-2">
+            <h4 class="font-cinzel font-bold text-[#F9E5C9] text-lg">Feminist Consciousness & Women Voices</h4>
+            <span class="text-xs font-mono text-[#c58361]">Groundbreaking Shift</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Pioneered by <strong class="text-[#e8c1ab]">Parveen Shakir</strong> (who brought authentic female vulnerability and professional life into ghazals), alongside fierce, anti-patriarchal, revolutionary voices like <strong class="text-[#e8c1ab]">Kishwar Naheed</strong> (<em class="text-[#e8c1ab]">Hum Aurtein</em>) and <strong class="text-[#e8c1ab]">Fahmida Riaz</strong>.
+          </p>
+        </div>
+
+        <!-- Filmi Shayari & Popular Media -->
+        <div class="bg-[#020611]/60 rounded-xl p-5 border border-[#c58361]/20 space-y-2">
+          <h4 class="font-bold text-[#F9E5C9] text-base">Filmi Shayari & Global Digital Renaissance</h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Urdu poetry found immense mass resonance through South Asian cinema lyrics (Shailendra, Majrooh, Gulzar) and today lives vibrantly across global digital platforms, international mushairas, and young contemporary voices.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-[#020611] border-t border-[#c58361]/20 py-8 px-4 text-center text-xs text-slate-500 space-y-3">
+    <div class="flex justify-center items-center gap-2">
+      <img src="logo.png" alt="AdabNawaz Logo" class="w-5 h-5 rounded-full object-cover">
+      <span class="font-cinzel text-sm text-[#F9E5C9] font-bold tracking-wider">AdabNawaz Archive</span>
+    </div>
+    <p class="max-w-md mx-auto text-slate-400">
+      Preserving and celebrating the enduring beauty of classical and contemporary Urdu literature.
+    </p>
+    <p class="font-mono text-[#c58361]/70">
+      &copy; AdabNawaz Archive. All historical records curated.
+    </p>
+  </footer>
+
+</body>
+</html>
